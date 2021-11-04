@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
-use App\Http\Controllers\API\BaseController AS BaseController;
+use App\Http\Controllers\API\BaseController as BaseController;
 
 class RegisterController extends BaseController
 {
@@ -16,7 +16,8 @@ class RegisterController extends BaseController
      * it can return name and token to interactor vie e.g. via postman
      * @return \Illuminate\Http\Response
      */
-    public function register(Request $request) {
+    public function register(Request $request)
+    {
 
         $validator = Validator::make($request->all(), [
             'name' => 'required',
@@ -34,8 +35,8 @@ class RegisterController extends BaseController
         $user = User::create($input);
 
         $success['name'] =  $user->name;
-        $success['token'] =  $user->createToken('rethink')->accessToken;
+        $success['access_token'] =  $user->createToken('authToken')->accessToken;
         return $this->sendResponse($success, 'User register successfully.');
-    }
 
+    }
 }
