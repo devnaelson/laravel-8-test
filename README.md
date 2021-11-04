@@ -1,6 +1,8 @@
 
-## Needed whether catch error from permision
+### Needed whether catch error from permision
+```
 - sudo chmod 777 -R laravel-8-test/
+```
 
 - local/public/api/register
 - Required
