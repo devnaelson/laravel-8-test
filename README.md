@@ -55,7 +55,7 @@ php artisan cache:clear
 
 # Authorized
 ```
-All request (create,delete,all,update,read specify data)
+All request (create,delete,all,read specify data)
 ```
 
 ### register task required
