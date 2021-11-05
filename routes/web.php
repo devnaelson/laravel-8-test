@@ -16,8 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('test', [TestController::class, 'index']);
 
-Route::get('create', [PeoplesController::class, 'index']);
-
 
 Route::get('/', function () {
     return view('welcome');

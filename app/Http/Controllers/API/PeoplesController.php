@@ -36,4 +36,30 @@ class PeoplesController extends BaseController
         Peoples::create($request->all());
         return $this->sendResponse($request->all(), 'Created with successfull!!');
     }
+
+    /**
+     * select alll and return json
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function all(Request $request)
+    {
+        return $this->sendResponse(Peoples::all(), 'selected with successfull!!');
+    }
+
+    /**
+     * select one and return json
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function one(Request $request, Peoples $people)
+    {
+        $resp = $people->where('full_name', $request->full_name)->get();
+        if (count($resp) > 0)
+        return $this->sendResponse($resp, 'selectedBy with successfull!!');
+        else
+        return $this->sendResponse($resp, "selectedBy failed, don't exist it row!!");
+    }
 }

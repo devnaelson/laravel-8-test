@@ -30,5 +30,7 @@ Route::prefix('v1')->group(function () {
   Route::middleware('token_auth')->group(function () {
     Route::post('test', [TestController::class, 'index']);
     Route::post('create', [PeoplesController::class, 'store']);
+    Route::get('selectAll', [PeoplesController::class, 'all']);
+    Route::post('selectBy', [PeoplesController::class, 'one']);
   });
 });
