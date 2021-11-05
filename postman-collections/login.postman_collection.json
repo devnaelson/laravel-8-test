@@ -1,0 +1,59 @@
+{
+	"id": "be4f5abe-ce9b-91c9-0c9b-329f5f557e1a",
+	"name": "login",
+	"description": "",
+	"order": [
+		"4eaba9b3-a0b8-b2ac-6ced-fc6befbaa098"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1636037859440,
+	"owner": "10499386",
+	"public": false,
+	"requests": [
+		{
+			"id": "4eaba9b3-a0b8-b2ac-6ced-fc6befbaa098",
+			"headers": "Accept: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/laravel-8-test/public/api/login",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "email",
+					"value": "naelson.g.saraiva@gmail.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "admin",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1636039467638,
+			"name": "login",
+			"description": "login e senha",
+			"collectionId": "be4f5abe-ce9b-91c9-0c9b-329f5f557e1a",
+			"responses": []
+		}
+	]
+}

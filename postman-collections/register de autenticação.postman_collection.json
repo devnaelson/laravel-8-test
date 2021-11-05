@@ -1,0 +1,73 @@
+{
+	"id": "8a304b58-ffb5-6578-2e7f-3d9b55316da7",
+	"name": "register de autenticação",
+	"description": "Criar acesso",
+	"order": [
+		"c590d155-7d1d-142a-5c8a-e14f1cb7c3dc"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1636034801090,
+	"owner": "10499386",
+	"public": false,
+	"requests": [
+		{
+			"id": "c590d155-7d1d-142a-5c8a-e14f1cb7c3dc",
+			"headers": "Accept: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/public/api/v1/register",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "naelson",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "email",
+					"value": "naelson.g.saraiva@gmail.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "admin",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "c_password",
+					"value": "admin",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1636111577037,
+			"name": "create new account to access",
+			"description": "",
+			"collectionId": "8a304b58-ffb5-6578-2e7f-3d9b55316da7",
+			"responses": []
+		}
+	]
+}

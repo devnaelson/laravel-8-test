@@ -32,5 +32,6 @@ Route::prefix('v1')->group(function () {
     Route::post('create', [PeoplesController::class, 'store']);
     Route::get('selectAll', [PeoplesController::class, 'all']);
     Route::post('selectBy', [PeoplesController::class, 'one']);
+    Route::post('deleteAll', [PeoplesController::class, 'deleteAll']);
   });
 });

@@ -17,6 +17,7 @@ class PeoplesController extends BaseController
      */
     public function store(Request $request)
     {
+
         $rules = array('full_name' => 'unique:peoples');
         $input['full_name'] = $request->full_name;
         $validator = Validator::make($input, $rules);
@@ -58,8 +59,20 @@ class PeoplesController extends BaseController
     {
         $resp = $people->where('full_name', $request->full_name)->get();
         if (count($resp) > 0)
-        return $this->sendResponse($resp, 'selectedBy with successfull!!');
+            return $this->sendResponse($resp, 'selectedBy with successfull!!');
         else
-        return $this->sendResponse($resp, "selectedBy failed, don't exist it row!!");
+            return $this->sendResponse($resp, "selectedBy failed, don't exist it row!!");
+    }
+
+    /**
+     * deleteAll
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function deleteAll(Request $request, Peoples $people)
+    {
+        $resp = $people->truncate();
+        return $this->sendResponse($resp, "All Deleted");
     }
 }

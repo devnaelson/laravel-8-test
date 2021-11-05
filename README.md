@@ -1,3 +1,15 @@
+### database name
+
+ ```
+tablename:peoples
+ ```
+
+### Endpoints
+
+ ```
+ ./postman-collections
+ ```
+
 ### Dependency Commandas
 
 ```
