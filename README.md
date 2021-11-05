@@ -31,7 +31,7 @@ php artisan cache:clear
 
 ### Guide REGISTER
 
-- local/public/api/register
+- local/public/api/v1/register
 - Required
 
 ```
@@ -44,7 +44,7 @@ php artisan cache:clear
 
 ### Guide LOGIN RESPONSE TOKEN
 
-- local/public/api/register
+- local/public/api/v1/login
 - Required
 
 ```
