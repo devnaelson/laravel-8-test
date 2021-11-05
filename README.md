@@ -1,6 +1,6 @@
 - Author- Developer Naelson
 - Test to Jobs 
-- Laravel 8 and note see the requiriments 
+- Laravel 8 and note see the requirements 
 - Note, like taken look on PDFs don't have update endpoit describe 
 ### database name
 
