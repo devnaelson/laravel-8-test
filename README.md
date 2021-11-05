@@ -1,7 +1,9 @@
-### Dependency
+### Dependency Commandas
 
 ```
-
+composer require laravel/passport
+php artisan migrate
+php artisan passport:install
 composer require peterpetrus/passport-token
 
 ```
