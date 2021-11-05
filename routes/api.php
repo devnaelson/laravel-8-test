@@ -1,10 +1,12 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\API\RegisterController;
 use App\Http\Controllers\API\LoginController;
+use App\Models\People;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,13 +19,17 @@ use App\Http\Controllers\API\LoginController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+
+Route::prefix('v1')->group(function () {
+
+    Route::post('register', [RegisterController::class, 'register']);
+    Route::post('login', [RegisterController::class, 'login']);
+
+    //Route::resource('peoples', People::class);
+    Route::middleware('token_auth')->group(function () {
+        Route::post('test', [TestController::class, 'index']);
+    });
 });
 
-Route::post('register', [RegisterController::class, 'register']);
-Route::post('login', [LoginController::class, 'login']);
 
-Route::middleware('auth:api')->group(function () {
-    Route::resource('peoples', People::class);
-});
+

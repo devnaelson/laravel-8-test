@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\API\BaseController as BaseController;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends BaseController
 {
@@ -31,12 +32,34 @@ class RegisterController extends BaseController
         }
 
         $input = $request->all();
-        $input['password'] = bcrypt($input['password']);
+        $input['password'] = Hash::make($input['password']);
         $user = User::create($input);
 
         $success['name'] =  $user->name;
         $success['access_token'] =  $user->createToken('authToken')->accessToken;
         return $this->sendResponse($success, 'User register successfully.');
+    }
 
+    /**
+     * Login api
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function login(Request $request)
+    {
+        if (Auth::attempt([
+            'email' => $request->email,
+            'password' => $request->password
+        ])) {
+
+            $user = Auth::user();
+
+            $success['token'] =  $user->createToken('authToken')->accessToken;
+            $success['name'] =  $user->name;
+
+            return $this->sendResponse($success, 'User login successfully.');
+        } else {
+            return $this->sendError('Unauthorised.', ['error' => 'Unauthorised']);
+        }
     }
 }

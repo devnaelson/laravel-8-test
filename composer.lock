@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f0031837afe9b57c13b90e1804225114",
+    "content-hash": "218f9c107a3feb608ca015ddaddac990",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -565,16 +565,16 @@
         },
         {
             "name": "firebase/php-jwt",
-            "version": "v5.4.0",
+            "version": "v5.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/firebase/php-jwt.git",
-                "reference": "d2113d9b2e0e349796e72d2a63cf9319100382d2"
+                "reference": "cf814442ce0e9eebe5317d61b63ccda4b85de67a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/d2113d9b2e0e349796e72d2a63cf9319100382d2",
-                "reference": "d2113d9b2e0e349796e72d2a63cf9319100382d2",
+                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/cf814442ce0e9eebe5317d61b63ccda4b85de67a",
+                "reference": "cf814442ce0e9eebe5317d61b63ccda4b85de67a",
                 "shasum": ""
             },
             "require": {
@@ -616,9 +616,9 @@
             ],
             "support": {
                 "issues": "https://github.com/firebase/php-jwt/issues",
-                "source": "https://github.com/firebase/php-jwt/tree/v5.4.0"
+                "source": "https://github.com/firebase/php-jwt/tree/v5.5.0"
             },
-            "time": "2021-06-23T19:00:23+00:00"
+            "time": "2021-11-04T16:21:41+00:00"
         },
         {
             "name": "fruitcake/laravel-cors",
@@ -2794,6 +2794,40 @@
                 "source": "https://github.com/paragonie/random_compat"
             },
             "time": "2020-10-15T08:29:30+00:00"
+        },
+        {
+            "name": "peterpetrus/passport-token",
+            "version": "0.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/peterpetrus/passport-token.git",
+                "reference": "6da356834fda20d29f0d47cbac012b61a820722a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/peterpetrus/passport-token/zipball/6da356834fda20d29f0d47cbac012b61a820722a",
+                "reference": "6da356834fda20d29f0d47cbac012b61a820722a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.3 || ^7.0 || ^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Dirty Decoder for Laravel Passport (Bearer) Access Token",
+            "support": {
+                "issues": "https://github.com/peterpetrus/passport-token/issues",
+                "source": "https://github.com/peterpetrus/passport-token/tree/0.0.10"
+            },
+            "time": "2021-03-01T09:59:46+00:00"
         },
         {
             "name": "php-http/message-factory",

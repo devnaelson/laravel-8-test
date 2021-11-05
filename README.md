@@ -16,3 +16,11 @@
 'c_password' => 'required|same:password',
 
 ```
+
+### Dependency
+
+```
+
+composer require peterpetrus/passport-token
+
+```
