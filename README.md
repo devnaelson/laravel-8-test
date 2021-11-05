@@ -26,7 +26,7 @@ composer require peterpetrus/passport-token
 
 ### Needed whether catch error from permission, usage CHMOD to unlock flow and clear out errors
 ```
-- sudo chmod 777 -R laravel-8-test/
+sudo chmod 777 -R laravel-8-test/
 php artisan cache:clear
 ```
 
