@@ -1,3 +1,6 @@
+- Author- Developer Naelson
+- Test to Jobs 
+- Note, like taken look on PDFs don't have update endpoit describe 
 ### database name
 
  ```
@@ -55,7 +58,15 @@ php artisan cache:clear
 
 # Authorized
 ```
-All request (create,delete,all,read specify data)
+All request (create
+=> 'local/public/api/v1/create'
+,delete
+=> 'local/public/api/v1/deleteAll'
+,all
+=> 'local/public/api/v1/selectAll'
+,read specify data
+=> 'local/public/api/v1/selectBy'
+)
 ```
 
 ### register task required
