@@ -24,7 +24,7 @@ composer require peterpetrus/passport-token
 
 ```
 
-### Guide LOGIN
+### Guide LOGIN RESPONSE TOKEN
 
 - local/public/api/register
 - Required
@@ -33,6 +33,14 @@ composer require peterpetrus/passport-token
 'email' => 'required|email',
 'password' => 'required',
 
+```
+# Whatever that you do request need Authentication
+- Teste authentication just remove token from header
+- get error from middleware \App\Http\Middleware\AuthApiForToken::class
+
+# Authorized
+```
+All request (create,delete,all,update,read specify data)
 ```
 
 ### register task required
