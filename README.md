@@ -1,3 +1,10 @@
+### Dependency
+
+```
+
+composer require peterpetrus/passport-token
+
+```
 
 ### Needed whether catch error from permission, usage CHMOD to unlock flow and clear out errors
 ```
@@ -14,13 +21,5 @@
 'email' => 'required|email',
 'password' => 'required',
 'c_password' => 'required|same:password',
-
-```
-
-### Dependency
-
-```
-
-composer require peterpetrus/passport-token
 
 ```
