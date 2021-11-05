@@ -23,3 +23,28 @@ composer require peterpetrus/passport-token
 'c_password' => 'required|same:password',
 
 ```
+
+### Guide LOGIN
+
+- local/public/api/register
+- Required
+
+```
+'email' => 'required|email',
+'password' => 'required',
+
+```
+
+### register task required
+- Error of validation data 
+```
+{
+    "success": false,
+    "message": "Validation Error.",
+    "data": {
+        "full_name": [
+            "The full name has already been taken."
+        ]
+    }
+}
+```

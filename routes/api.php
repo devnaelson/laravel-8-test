@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\API\RegisterController;
 use App\Http\Controllers\API\LoginController;
+use App\Http\Controllers\API\PeoplesController;
 use App\Models\People;
 
 /*
@@ -22,14 +23,12 @@ use App\Models\People;
 
 Route::prefix('v1')->group(function () {
 
-    Route::post('register', [RegisterController::class, 'register']);
-    Route::post('login', [RegisterController::class, 'login']);
+  Route::post('register', [RegisterController::class, 'register']);
+  Route::post('login', [RegisterController::class, 'login']);
 
-    //Route::resource('peoples', People::class);
-    Route::middleware('token_auth')->group(function () {
-        Route::post('test', [TestController::class, 'index']);
-    });
+  #Route::resource('peoples', People::class);
+  Route::middleware('token_auth')->group(function () {
+    Route::post('test', [TestController::class, 'index']);
+    Route::post('create', [PeoplesController::class, 'store']);
+  });
 });
-
-
-
