@@ -27,7 +27,8 @@ class AuthApiForToken
         }
 
         return response([
-            'message' => 'Unauthenticated'
+            'msg-solution' => "Invalid Token, this credentials don't match!",
+            'message-status' => "Unauthenticated"
         ], 403);
     }
 }
