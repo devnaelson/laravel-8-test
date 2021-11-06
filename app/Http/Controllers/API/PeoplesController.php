@@ -65,6 +65,21 @@ class PeoplesController extends BaseController
     }
 
     /**
+     * select one and return json
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Peoples $people)
+    {
+        $resp = $people->where('full_name', $request->full_name)->update(['full_name' => $request->full_name]);
+        if ($resp > 0)
+            return $this->sendResponse($resp, 'Update with successfull!!');
+        else
+            return $this->sendResponse($resp, "Update failed, don't exist it row!!");
+    }
+
+    /**
      * deleteAll
      *
      * @param  \Illuminate\Http\Request  $request

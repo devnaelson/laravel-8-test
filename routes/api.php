@@ -33,5 +33,6 @@ Route::prefix('v1')->group(function () {
     Route::get('selectAll', [PeoplesController::class, 'all']);
     Route::post('selectBy', [PeoplesController::class, 'one']);
     Route::post('deleteAll', [PeoplesController::class, 'deleteAll']);
+    Route::post('update', [PeoplesController::class, 'update']);
   });
 });

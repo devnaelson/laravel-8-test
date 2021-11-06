@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\API\BaseController as BaseController;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Peoples;
 
 class RegisterController extends BaseController
 {
@@ -17,7 +18,7 @@ class RegisterController extends BaseController
      * it can return name and token to interactor vie e.g. via postman
      * @return \Illuminate\Http\Response
      */
-    public function register(Request $request)
+    public function register(Request $request, Peoples $people)
     {
 
         $validator = Validator::make($request->all(), [
@@ -31,6 +32,9 @@ class RegisterController extends BaseController
             return $this->sendError('Validation Error.', $validator->errors());
         }
 
+        $resp = User::where('email', $request->email)->get();
+        if (count($resp) > 0) return $this->sendResponse($resp, 'Already it account!!');
+
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
         $user = User::create($input);
@@ -38,6 +42,7 @@ class RegisterController extends BaseController
         $success['name'] =  $user->name;
         $success['access_token'] =  $user->createToken('authToken')->accessToken;
         return $this->sendResponse($success, 'User register successfully.');
+        
     }
 
     /**
