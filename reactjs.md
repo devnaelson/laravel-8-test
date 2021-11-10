@@ -17,3 +17,17 @@ Are you familiar with any build tools like webpack, grunt, gulp, etc? Those are 
 There are additional scripts in the package.json file that will run mom tasks too.
 
 You will find  ``` npm run dev  ``` for local development and  ```npm run prod ``` for production.
+- after this ``` npm run watch  ``` it hold allow alway const compiler everytime
+- like this above, it compiler from resource/js/app.js to public/js/ 
+- - https://laravel.com/docs/8.x/mix 
+
+
+ ```
+
+php artisan cache:clear
+php artisan route:clear
+php artisan config:clear 
+php artisan view:clear
+
+
+ ```

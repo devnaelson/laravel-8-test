@@ -405,11 +405,12 @@
 </head>
 
 <body>
-    <div id="example">
+    <div id="root">
 
     </div>
    <!-- React JS -->
-   <script  defer type="text/javascript" src="{{ mix('js/app.js') }}"></script>
+   <script  defer type="text/javascript" src="{{ asset('js/app.js') }}"></script>
+   <!-- <script  defer type="text/javascript" src="{{ mix('js/app.js') }}"></script> only work with artisan serve-->
 </body>
 
 </html>

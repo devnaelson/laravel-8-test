@@ -12,5 +12,30 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-require('./components/Example');
+//require('./components/timer');
+import Timer from './components/timer';
 
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+
+function Example() {
+    return (
+        <div className="container">
+                <Timer.Clock />
+            <div className="row justify-content-center">
+                <div className="col-md-8">
+                    <div className="card">
+                        <div className="card-header">Example Component</div>
+
+                        <div className="card-body">ssssssssssss</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+if (document.getElementById('root')) {
+    ReactDOM.render(<Example />, document.getElementById('root'));
+}
