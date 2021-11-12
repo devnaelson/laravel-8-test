@@ -24,6 +24,7 @@ You will find  ``` npm run dev  ``` for local development and  ```npm run prod `
 
  ```
 
+check browser cache
 php artisan cache:clear
 php artisan route:clear
 php artisan config:clear 
