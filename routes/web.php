@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Http;
 Route::get('test', [TestController::class, 'index']);
 
 
-Route::get('/guzzle', function () {
+Route::get('guzzle', function () {
 
     $res = Http::get('https://api.github.com/user', ['auth' =>  ['NaelsonBrasil', 'Repo123+']]);
     echo $res->getStatusCode(); // 200
