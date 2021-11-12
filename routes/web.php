@@ -3,6 +3,8 @@
 use App\Http\Controllers\API\PeoplesController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Http;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,5 +20,10 @@ Route::get('test', [TestController::class, 'index']);
 
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $res = Http::get('https://api.github.com/user', ['auth' =>  ['NaelsonBrasil', 'Repo123+']]);
+    echo $res->getStatusCode(); // 200
+    echo $res->getBody(); // { "type": "User", ....
+
+       return view('welcome');
 });
