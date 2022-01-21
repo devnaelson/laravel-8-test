@@ -6,7 +6,7 @@
 ### Table Name
 
 ```
-tablename:peoples, é preciso rodar o comandos artisan logo a baixo!
+tablename:peoples, é preciso rodar o comandos artisan logo a baixo para carregar as tabelas!
 ```
 
 ### Endpoints
@@ -15,7 +15,7 @@ tablename:peoples, é preciso rodar o comandos artisan logo a baixo!
 ./postman-collections
 ```
 
-### Dependency Commandas
+### Dependências usar commands
 
 ```
 composer require laravel/passport
