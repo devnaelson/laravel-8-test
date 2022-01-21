@@ -7,7 +7,6 @@
  
  ```
 
-- 
 - Laravel Framework 8.70.2
 - PHP Version 8.0.12
 - Test para o Jobs ./Teste_ Desenvolvedor PHP.pdf
