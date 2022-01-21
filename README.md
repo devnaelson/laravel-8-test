@@ -14,6 +14,6 @@
 
 ### Como User
 
-- ⚙️ [User Api](https://github.com/devnaelson/laravel-8-test/blob/TInterview510911/Api-Mysql.md)  ```(MidleWAre,Pasaport, Mysql)```
+- ⚙️ [Detalhes Api](https://github.com/devnaelson/laravel-8-test/blob/TInterview510911/Api-Mysql.md)  ```(MidleWAre,Pasaport, Mysql)```
 
-- ⚙️ [Front End](https://github.com/devnaelson/laravel-8-test/blob/TInterview510911/interfaceVue.md)  ```(VueJS)```
+- ⚙️ [Detalhes Front End](https://github.com/devnaelson/laravel-8-test/blob/TInterview510911/interfaceVue.md)  ```(VueJS)```
