@@ -1,8 +1,3 @@
-- Author - Developer Naelson
-- Test to Jobs 
-- Laravel 8 and note see the requirements 
-- Note, like taken look on PDFs don't have update endpoit describe, but did it
-
 ### Table Name
 
 ```
