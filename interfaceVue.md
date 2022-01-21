@@ -1,8 +1,7 @@
-- 
-- 
-- 
+### Necessário para ver o views
 
-### Commandos para rodar o frontend
+- Autor: Naelson
+- Commandos para rodar o frontend
 
  - Primeiro passo, instalar os pacotes, se caso não tiver o node instalar ele, antes do pacote vue
  ```
