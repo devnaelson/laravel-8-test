@@ -10,7 +10,6 @@
 ```
 node -v
 npm -v 
-
 ```
 - instal vue
 ```
