@@ -13,3 +13,6 @@
 - Note, like taken look on PDFs don't have update endpoit describe, but did it
 
 ### Como User
+
+⚙️ [User Api](https://github.com/devnaelson/devnaelson/blob/main/projects/l2off-dashboard/view.md)  ```(MidleWAre,Pasaport, Mysql)```
+⚙️ [Front End](https://github.com/devnaelson/devnaelson/blob/main/projects/l2off-dashboard/view.md)  ```(VueJS)```
