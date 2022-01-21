@@ -5,19 +5,15 @@
 
 ### Table Name
 
- ```
-
-    tablename:peoples, é preciso rodar o comandos artisan logo a baixo!
-
- ```
+```
+tablename:peoples, é preciso rodar o comandos artisan logo a baixo!
+```
 
 ### Endpoints
 
- ```
-
-    ./postman-collections
-
- ```
+```
+./postman-collections
+```
 
 ### Dependency Commandas
 
@@ -36,25 +32,24 @@ php artisan cache:clear
 
 ### Guia de registrar usuário novo, login e get token
 
-    - local/public/api/v1/register
-    - Required
+- local/public/api/v1/register
+- Required
 
 ```
-    'name' => 'required',
-    'email' => 'required|email',
-    'password' => 'required',
-    'c_password' => 'required|same:password',
-
+'name' => 'required',
+'email' => 'required|email',
+'password' => 'required',
+'c_password' => 'required|same:password',
 ```
 
 ### Guia para logar e ter o token como resposta
 
 ```
-    - local/public/api/v1/login
-    - Required
+- local/public/api/v1/login
+- Required
 
-    'email' => 'required|email',
-    'password' => 'required',
+'email' => 'required|email',
+'password' => 'required',
 
 ```
 
