@@ -13,9 +13,10 @@
 
 <body>
     <div id="root">
-
+        <example-component></example-component>
     </div>
-   <!-- React JS -->
+    <!-- React JS -->
+    <script defer type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 </body>
 
 </html>
