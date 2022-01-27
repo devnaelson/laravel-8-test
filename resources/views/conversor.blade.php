@@ -9,8 +9,6 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-
     <title>{{ config('app.name', 'Laravel') }}</title>
     @stack('stylesheet')
 
@@ -18,25 +16,31 @@
 
 <body>
 
-    <div class="container">
+    <div class="container-fluid">
+
         <div class="row">
             <div class="col-12">
                 <label for="dataCota">Data da cotação</label>
                 <input type="text" class="form-control w-25" aria-label="dataCota">
             </div>
         </div>
+        <hr />
         <div class="row">
-            <div class="col-3">
+
+            <div class="col-2">
                 <input type="text" class="form-control" placeholder="First name" aria-label="First name">
             </div>
-            <div class="col-3">
+
+            <div class="col-2">
                 <label class="visually-hidden" for="specificSizeSelect">Preference</label>
                 <select class="form-select" id="specificSizeSelect">
                     <option value="1">BRL</option>
                 </select>
             </div>
-            <div class="col-3">
-                <i class="fas fa-exchange"></i>
+            <div class="col-1">
+                <div class="wIcon">
+                    <i class="fas fa-exchange"></i>
+                </div>
             </div>
             <div class="col-3">
                 <label class="visually-hidden" for="specificSizeSelect">Preference</label>
@@ -45,6 +49,14 @@
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
+                </select>
+            </div>
+            <div class="col-3">
+                <label class="visually-hidden" for="specificSizeSelect">Preference</label>
+                <select class="form-select" id="specificSizeSelect">
+                    <option selected>Formas de pagamento...</option>
+                    <option value="1.45">Boleto, taxa de 1,45%</option>
+                    <option value="7.63">cartão de crédito, taxa de 7,63%</option>
                 </select>
             </div>
         </div>
@@ -59,6 +71,7 @@
         } from "{{asset('js/axios.js')}}";
         const instance = config("{{ url('api/v1')}}");
         //request(axios,"{{ url('test/request')}}").then(data => { console.log(data); }).catch(err => console.log(err));
+
         /*
         // Send a POST request OK
         instance({
@@ -72,6 +85,7 @@
             console.log(response.data);
           }).catch(err => console.log(err));
         */
+
         /*
         // Send a POST request OK
           axios({
