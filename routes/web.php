@@ -36,64 +36,10 @@ Route::get('/guzzle', function () {
     $res = Http::get('https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL,BTC-BRL');
     $bought_value = "1.000.00";
 
-?>
-    <!doctype html>
-    <html lang="en">
-
-    <head>
-        <meta charset="utf-8">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-        <title>Covnersão</title>
-    </head>
-
-    <body>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <label for="dataCota">Data da cotação</label>
-                    <input type="text" class="form-control w-25" aria-label="dataCota">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-3">
-                    <input type="text" class="form-control" placeholder="First name" aria-label="First name">
-                </div>
-                <div class="col-3">
-                    <label class="visually-hidden" for="specificSizeSelect">Preference</label>
-                    <select class="form-select" id="specificSizeSelect">
-                        <option value="1">BRL</option>
-                    </select>
-                </div>
-                <div class="col-3">
-                    <i class="fas fa-exchange"></i>
-                </div>
-                <div class="col-3">
-                    <label class="visually-hidden" for="specificSizeSelect">Preference</label>
-                    <select class="form-select" id="specificSizeSelect">
-                        <option selected>Choose...</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <br>
-        <script>
-
-        </script>
-    </body>
-
-    </html>
-
-<?php
-
-
     echo "<pre>";
     dd($res->json());
     echo "</pre>";
+    
 });
 
 Route::get('/', function () {
