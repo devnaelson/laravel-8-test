@@ -21,7 +21,7 @@
             <div class="row">
                 <div class="col-2 text-center p-0 m-0">
                     <label for="dataCota">Data da cotação</label>
-                    <input type="text" class="form-control" aria-label="dataCota">
+                    <input type="text" class="form-control inputDataCota" aria-label="dataCota">
                 </div>
             </div>
         </header>
