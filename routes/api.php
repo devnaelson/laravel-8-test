@@ -36,7 +36,7 @@ Route::prefix('v1')->group(function () {
     Route::post('deleteAll', [PeoplesController::class, 'deleteAll']);
     Route::post('update', [PeoplesController::class, 'update']);
 
-    Route::post('sAllCurrency', function () {
+    Route::get('sAllCurrency', function () {
       return response()->json([
         'name' => 'Abigail',
         'state' => 'CA',

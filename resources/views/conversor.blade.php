@@ -61,45 +61,30 @@
     </div>
 
     <script type="module">
-        import {
-            request
-        } from "{{asset('js/axios.js')}}";
-        import {
-            config
-        } from "{{asset('js/axios.js')}}";
+        import request from "{{asset('js/axios.js')}}";
+        import config from "{{asset('js/axios.js')}}";
 
+        const getCongig = config("{{ url('api/v1/')}}"); //Base Url api/v1/ after use only endpoints
 
-        const instance = config("{{ url('api/v1/sAllCurrency')}}");
-
-        //request(axios,"{{ url('test/request')}}").then(data => { console.log(data); }).catch(err => console.log(err));
+        // send request
+        getCongig({
+            method: 'GET',
+            url: "/sAllCurrency",
+            // url: "{{ url('/test/request/validation')}}",
+            data: {
+                email: 'naelson.g.saraiva@gmail.com',
+                password: 'admin123'
+            }
+        }).then(function(response) {
+            console.log(response.data);
+        }).catch(err => console.log(err));
 
         /*
-        // Send a POST request OK
-        instance({
-            method: 'post',
-            url: "/login",
-            data: {
-              email: 'naelson.g.saraiva@gmail.com',
-              password: 'admin123'
-            }
-          }).then(function(response){
-            console.log(response.data);
-          }).catch(err => console.log(err));
-        */
-
-        /*
-        // Send a POST request OK
-          axios({
-            method: 'post',
-            url: "{{ url('/test/request/validation')}}",
-            data: {
-              email: 'naelson.g.saraiva@gmail.com',
-              password: 'admin123'
-            }
-          }).then(function(response){
-            console.log(response.data);
-          }).catch(err => console.log(err));
-          */
+        path direct without config
+        request(axios, "{{ url('FullUrl')}}").then(data => {
+            console.log(data);
+        }).catch(err => console.log(err));
+         */
     </script>
 
 </body>

@@ -15,9 +15,12 @@ tablename:peoples, é preciso rodar o comandos artisan logo a baixo para carrega
 ```
 composer require laravel/passport
 php artisan migrate
-php artisan passport:install
-composer require peterpetrus/passport-token
 
+"Personal access client not found. Please create one."
+php artisan passport:install
+
+-- Esqueci para que serve o comando a baixo.
+composer require peterpetrus/passport-token
 ```
 
 ### Necessário se quer pegar erros de permissão, uso do chmod, para desblockear e limpar erros
