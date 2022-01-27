@@ -1,4 +1,4 @@
-export function config(url) {
+export default function config(url) {
     return axios.create({
         baseURL: url,
         timeout: 1000,
@@ -6,8 +6,8 @@ export function config(url) {
     });
 }
 
-export function request(axiosInst, url) {
-    return axiosInst.get(url).then((response) => {
+export default function request(nAxios, url) {
+    return nAxios.get(url).then((response) => {
         return response.data;
     });
 }
