@@ -17,49 +17,50 @@
 <body>
 
     <div class="container-fluid">
-
-        <div class="row">
-            <div class="col-12">
-                <label for="dataCota">Data da cotação</label>
-                <input type="text" class="form-control w-25" aria-label="dataCota">
-            </div>
-        </div>
-        <hr />
-        <div class="row">
-
-            <div class="col-2">
-                <input type="text" class="form-control" placeholder="First name" aria-label="First name">
-            </div>
-
-            <div class="col-2">
-                <label class="visually-hidden" for="specificSizeSelect">Preference</label>
-                <select class="form-select" id="specificSizeSelect">
-                    <option value="1">BRL</option>
-                </select>
-            </div>
-            <div class="col-1">
-                <div class="wIcon">
-                    <i class="fas fa-exchange"></i>
+        <header class="currentHeader">
+            <div class="row">
+                <div class="col-12">
+                    <label for="dataCota">Data da cotação</label>
+                    <input type="text" class="form-control w-25" aria-label="dataCota">
                 </div>
             </div>
-            <div class="col-3">
-                <label class="visually-hidden" for="specificSizeSelect">Preference</label>
-                <select class="form-select" id="specificSizeSelect">
-                    <option selected>Choose...</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
-            </div>
-            <div class="col-3">
-                <label class="visually-hidden" for="specificSizeSelect">Preference</label>
-                <select class="form-select" id="specificSizeSelect">
-                    <option selected>Formas de pagamento...</option>
-                    <option value="1.45">Boleto, taxa de 1,45%</option>
-                    <option value="7.63">cartão de crédito, taxa de 7,63%</option>
-                </select>
-            </div>
-        </div>
+        </header>
+        <hr />
+
+        <article class="op">
+            <div class="row">
+                <div class="col-2">
+                    <label for="specificSizeSelect">Moeda</label>
+                    <select class="form-select" id="specificSizeSelect">
+                        <option value="1">BRL</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                    <label for="target_value">Valor da Compra em BRL</label>
+                    <input type="text" class="form-control" placeholder="XXXXXX" id="target_value">
+                </div>
+                <div class="col-1">
+                    <div class="wIcon">
+                        <i class="fas fa-exchange"></i>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <label for="ChooseCurrencyDestiny">Moeda de compra </label>
+                    <select class="form-select" id="ChooseCurrencyDestiny">
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                    <label for="paymentMethod">Formas de pagamento...</label>
+                    <select class="form-select" id="paymentMethod">
+                        <option value="1.45">Boleto, taxa de 1,45%</option>
+                        <option value="7.63">Cartão de crédito, taxa de 7,63%</option>
+                    </select>
+                </div>
+        </article>
+
     </div>
 
     <script type="module">
