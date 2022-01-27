@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Http;
 */
 
 Route::get('test', [TestController::class, 'index']);
+Route::get('/currency', function () {
+    return view('conversor');
+});
 
 Route::get('/guzzle', function () {
 
@@ -50,7 +53,7 @@ Route::get('/guzzle', function () {
             <div class="row">
                 <div class="col-12">
                     <label for="dataCota">Data da cotação</label>
-                    <input type="text" class="form-control w-25" aria-label="dataCota" >
+                    <input type="text" class="form-control w-25" aria-label="dataCota">
                 </div>
             </div>
             <div class="row">

@@ -1,4 +1,4 @@
-@include('scripts.global')
+@include('stack.script')
 @stack('scripts-axios')
 
 <!doctype html>
