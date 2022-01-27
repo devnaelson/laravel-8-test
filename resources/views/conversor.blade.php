@@ -30,17 +30,17 @@
         <article class="op">
             <div class="row">
                 <div class="col-2">
-                    <label for="myCurrency">Moeda</label>
+                    <label for="myCurrency" class="p-3 m-1">Moeda</label>
                     <select class="form-select" id="myCurrency">
                         <option value="1">BRL</option>
                     </select>
                 </div>
                 <div class="col-2">
-                    <label for="target_value">Valor da Compra em BRL</label>
+                    <label for="target_value" class="p-3 m-1">Valor da Compra em BRL</label>
                     <input type="text" class="form-control" placeholder="XXXXXX" id="target_value">
                 </div>
                 <div class="col-3">
-                    <label for="paymentMethod">Formas de pagamento...</label>
+                    <label for="paymentMethod" class="p-3 m-1">Formas de pagamento...</label>
                     <select class="form-select" id="paymentMethod">
                         <option value="1.45">Boleto, taxa de 1,45%</option>
                         <option value="7.63">Cartão de crédito, taxa de 7,63%</option>
@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="col-2">
-                    <label for="label">Moeda de compra </label>
+                    <label for="label" class="p-3 m-1">Moeda de compra </label>
                     <select class="form-select" id="label targetSelect targetInsertElement">
                         <option value="1">One</option>
                         <option value="2">Two</option>
