@@ -66,8 +66,8 @@
                     <h4>Resultado da conversão</h4>
                     <div class="resStyle">
                         <ul>
-                            <li> Conversão de: <strong class="text-secondary">Real/BRL (790)</strong></li>
-                            <li> Valor a converter: <strong class="text-secondary">1,00</strong></li>
+                            <li class="liPropriets"> Conversão de: <strong class="text-secondary">Real/BRL (790)</strong></li>
+                            <li class="liPropriets"> Valor a converter: <strong class="text-secondary">1,00</strong></li>
                         </ul>
                     </div>
                 </div>
