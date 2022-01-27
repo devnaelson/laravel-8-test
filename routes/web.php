@@ -46,7 +46,6 @@ Route::get('/guzzle', function () {
 
     <body>
 
-
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -84,7 +83,6 @@ Route::get('/guzzle', function () {
     </body>
 
     </html>
-
 
 <?php
 
