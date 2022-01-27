@@ -37,10 +37,8 @@ Route::prefix('v1')->group(function () {
     Route::post('update', [PeoplesController::class, 'update']);
 
     Route::get('sAllCurrency', function () {
-      return response()->json([
-        'name' => 'Abigail',
-        'state' => 'CA',
-      ]);
+      $res = Http::get('https://economia.awesomeapi.com.br/json/all');
+      return $res->json();
     });
   });
 });
