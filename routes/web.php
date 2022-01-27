@@ -32,9 +32,6 @@ Route::get('/guzzle', function () {
 
     $res = Http::get('https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL,BTC-BRL');
     $bought_value = "1.000.00";
-    echo "<pre>";
-    dd($res->json());
-    echo "</pre>";
 
 ?>
     <!doctype html>
@@ -49,13 +46,36 @@ Route::get('/guzzle', function () {
 
     <body>
 
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+                </div>
+                <div class="col">
+                    <label class="visually-hidden" for="specificSizeSelect">Preference</label>
+                    <select class="form-select" id="specificSizeSelect">
+                        <option selected>Choose...</option>
+                        <option value="1">BRL</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <br>
         <script>
 
         </script>
     </body>
 
     </html>
+
+
 <?php
+
+
+    echo "<pre>";
+    dd($res->json());
+    echo "</pre>";
 });
 
 Route::get('/', function () {
