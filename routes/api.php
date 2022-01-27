@@ -8,7 +8,7 @@ use App\Http\Controllers\API\RegisterController;
 use App\Http\Controllers\API\LoginController;
 use App\Http\Controllers\API\PeoplesController;
 use App\Models\People;
-
+use Illuminate\Support\Facades\Http;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -41,7 +41,6 @@ Route::prefix('v1')->group(function () {
         'name' => 'Abigail',
         'state' => 'CA',
       ]);
-      
     });
   });
 });
