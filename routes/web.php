@@ -49,9 +49,11 @@ Route::get('/guzzle', function () {
 
         <div class="container">
             <div class="row">
-                <div class="col-auto left">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="col-12">
+                    <input type="text" class="form-control w-25 float-left" placeholder="First name" aria-label="First name">
                 </div>
+            </div>
+            <div class="row">
                 <div class="col">
                     <input type="text" class="form-control" placeholder="First name" aria-label="First name">
                 </div>
