@@ -1,4 +1,5 @@
-body {
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .wIcon {
@@ -16,14 +17,12 @@ body {
     height: 200px !important;
 }
 
-.op > div{
+.op > div {
     padding: 10px;
 }
-
 
 .currentHeader {
     background-image: linear-gradient(#0074ad, #004b99);
     padding: 50px;
     color: #f8f9fa;
 }
-
