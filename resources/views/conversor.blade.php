@@ -39,6 +39,13 @@
                     <label for="target_value">Valor da Compra em BRL</label>
                     <input type="text" class="form-control" placeholder="XXXXXX" id="target_value">
                 </div>
+                <div class="col-3">
+                    <label for="paymentMethod">Formas de pagamento...</label>
+                    <select class="form-select" id="paymentMethod">
+                        <option value="1.45">Boleto, taxa de 1,45%</option>
+                        <option value="7.63">Cartão de crédito, taxa de 7,63%</option>
+                    </select>
+                </div>
                 <div class="col-1">
                     <div class="wIcon">
                         <i class="fas fa-exchange"></i>
@@ -50,13 +57,6 @@
                         <option value="1">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
-                    </select>
-                </div>
-                <div class="col-3">
-                    <label for="paymentMethod">Formas de pagamento...</label>
-                    <select class="form-select" id="paymentMethod">
-                        <option value="1.45">Boleto, taxa de 1,45%</option>
-                        <option value="7.63">Cartão de crédito, taxa de 7,63%</option>
                     </select>
                 </div>
         </article>
