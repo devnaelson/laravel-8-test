@@ -49,23 +49,24 @@ Route::get('/guzzle', function () {
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <input type="text" class="form-control w-25 float-left" placeholder="First name" aria-label="First name">
+                    <label for="dataCota">Data da cotação</label>
+                    <input type="text" class="form-control w-25" aria-label="dataCota" >
                 </div>
             </div>
             <div class="row">
-                <div class="col">
+                <div class="col-3">
                     <input type="text" class="form-control" placeholder="First name" aria-label="First name">
                 </div>
-                <div class="col">
+                <div class="col-3">
                     <label class="visually-hidden" for="specificSizeSelect">Preference</label>
                     <select class="form-select" id="specificSizeSelect">
                         <option value="1">BRL</option>
                     </select>
                 </div>
-                <div class="col">
+                <div class="col-3">
                     <i class="fas fa-exchange"></i>
                 </div>
-                <div class="col">
+                <div class="col-3">
                     <label class="visually-hidden" for="specificSizeSelect">Preference</label>
                     <select class="form-select" id="specificSizeSelect">
                         <option selected>Choose...</option>
