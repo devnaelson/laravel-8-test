@@ -73,12 +73,7 @@
         // send request
         getCongig({
             method: 'GET',
-            url: "/sAllCurrency",
-            // url: "{{ url('/test/request/validation')}}",
-            data: {
-                email: 'naelson.g.saraiva@gmail.com',
-                password: 'admin123'
-            }
+            url: "/sAllCurrency", // url: "{{ url('/test/request/validation')}}",
         }).then(function(response) {
             console.log(response.data);
         }).catch(err => console.log(err));
