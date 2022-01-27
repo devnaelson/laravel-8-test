@@ -46,7 +46,7 @@
                 </div>
                 <div class="col-2">
                     <label for="ChooseCurrencyDestiny">Moeda de compra </label>
-                    <select class="form-select" id="ChooseCurrencyDestiny">
+                    <select class="form-select" id="ChooseCurrencyDestiny" id="targetSelect targetInsertElement">
                         <option value="1">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
@@ -70,7 +70,10 @@
         import {
             config
         } from "{{asset('js/axios.js')}}";
-        const instance = config("{{ url('api/v1')}}");
+
+
+        const instance = config("{{ url('api/v1/sAllCurrency')}}");
+
         //request(axios,"{{ url('test/request')}}").then(data => { console.log(data); }).catch(err => console.log(err));
 
         /*
@@ -101,6 +104,7 @@
           }).catch(err => console.log(err));
           */
     </script>
+
 </body>
 
 </html>

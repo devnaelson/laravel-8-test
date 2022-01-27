@@ -27,6 +27,7 @@ Route::prefix('v1')->group(function () {
   Route::post('login', [RegisterController::class, 'login']);
 
   #Route::resource('peoples', People::class);
+
   Route::middleware('token_auth')->group(function () {
     Route::post('test', [TestController::class, 'index']);
     Route::post('create', [PeoplesController::class, 'store']);
@@ -34,5 +35,13 @@ Route::prefix('v1')->group(function () {
     Route::post('selectBy', [PeoplesController::class, 'one']);
     Route::post('deleteAll', [PeoplesController::class, 'deleteAll']);
     Route::post('update', [PeoplesController::class, 'update']);
+
+    Route::post('sAllCurrency', function () {
+      return response()->json([
+        'name' => 'Abigail',
+        'state' => 'CA',
+      ]);
+      
+    });
   });
 });
