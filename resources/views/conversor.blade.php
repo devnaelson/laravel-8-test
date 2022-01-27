@@ -83,16 +83,16 @@
             console.log(response.data);
         }).catch(err => console.log(err));
 
-        getCongig({
-            method: 'POST',
-            url: "/None",
-            data: {
-                email: 'naelson.x.x@gmail.com',
-                password: 'xxxxxx'
-            }
-        }).then(function(response) {
-            console.log(response.data);
-        }).catch(err => console.log(err));
+        // getCongig({
+        //     method: 'POST',
+        //     url: "/None",
+        //     data: {
+        //         email: 'naelson.x.x@gmail.com',
+        //         password: 'xxxxxx'
+        //     }
+        // }).then(function(response) {
+        //     console.log(response.data);
+        // }).catch(err => console.log(err));
 
         /*
         path direct without config
