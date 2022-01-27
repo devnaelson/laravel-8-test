@@ -26,11 +26,14 @@
                 </div>
             </div>
         </header>
+
         <hr />
+
         <div class="row">
             <div class="col-2"></div>
             <div class="col-4"><h3>Conversor de Moedas</h3></div>
         </div>
+        
         <article class="op">
             <div class="row">
                 <div class="col-2">
