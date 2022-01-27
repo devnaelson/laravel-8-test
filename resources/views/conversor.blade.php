@@ -30,8 +30,8 @@
         <article class="op">
             <div class="row">
                 <div class="col-2">
-                    <label for="specificSizeSelect">Moeda</label>
-                    <select class="form-select" id="specificSizeSelect">
+                    <label for="myCurrency">Moeda</label>
+                    <select class="form-select" id="myCurrency">
                         <option value="1">BRL</option>
                     </select>
                 </div>
@@ -45,8 +45,8 @@
                     </div>
                 </div>
                 <div class="col-2">
-                    <label for="ChooseCurrencyDestiny">Moeda de compra </label>
-                    <select class="form-select" id="ChooseCurrencyDestiny" id="targetSelect targetInsertElement">
+                    <label for="label">Moeda de compra </label>
+                    <select class="form-select" id="label targetSelect targetInsertElement">
                         <option value="1">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
