@@ -68,7 +68,8 @@
         import request from "{{asset('js/axios.js')}}";
         import config from "{{asset('js/axios.js')}}";
 
-        const getCongig = config("{{ url('api/v1/')}}"); //Base Url api/v1/ after use only endpoints
+        //Base Url api/v1/ after use only endpoints
+        const getCongig = config("{{ url('api/v1/')}}"); 
 
         // send request
         getCongig({
