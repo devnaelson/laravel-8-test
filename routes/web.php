@@ -55,8 +55,19 @@ Route::get('/guzzle', function () {
                 <div class="col">
                     <label class="visually-hidden" for="specificSizeSelect">Preference</label>
                     <select class="form-select" id="specificSizeSelect">
-                        <option selected>Choose...</option>
                         <option value="1">BRL</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <i class="fas fa-exchange"></i>
+                </div>
+                <div class="col">
+                    <label class="visually-hidden" for="specificSizeSelect">Preference</label>
+                    <select class="form-select" id="specificSizeSelect">
+                        <option selected>Choose...</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
                     </select>
                 </div>
             </div>
