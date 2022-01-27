@@ -21,18 +21,17 @@
             <div class="row">
                 <div class="col-2 text-center p-0 m-0">
                     <label for="dataCota">Data da cotação</label>
-                    <input type="text" class="form-control  " aria-label="dataCota">
+                    <input type="text" class="form-control" aria-label="dataCota">
                 </div>
             </div>
         </header>
         <hr />
-
         <article class="op">
             <div class="row">
                 <div class="col-2">
                     <label for="myCurrency" class="p-3 m-1">Moeda</label>
                     <select class="form-select" id="myCurrency">
-                        <option value="1">BRL</option>
+                        <option value="1" disabled>BRL</option>
                     </select>
                 </div>
                 <div class="col-2">
