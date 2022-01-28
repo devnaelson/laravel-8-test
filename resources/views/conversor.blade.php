@@ -198,8 +198,6 @@
 
             console.log(dataToConvert);
 
-
-
         }, 1000)
 
         function AlertConditional(formatedVAl, valCalculater, callback) {
