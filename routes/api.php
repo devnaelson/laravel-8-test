@@ -41,6 +41,8 @@ Route::prefix('v1')->group(function () {
       return $res->json();
     });
 
-
+    Route::post('convert', function () {
+      return [1, 2, 3];
+    });
   });
 });

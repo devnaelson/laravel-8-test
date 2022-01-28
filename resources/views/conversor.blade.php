@@ -159,32 +159,40 @@
             let dataToConvert = {
                 inputValue: undefined,
                 methodPayment: undefined,
-                Currency: undefined,
+                currency: undefined,
             };
 
             dataToConvert.inputValue = unformated;
             dataToConvert.methodPayment = value_pay;
-            dataToConvert.Currency = value_currency;
+            dataToConvert.currency = value_currency;
 
             AlertConditional(formatedVAl, unformated, function(action) {
                 if (action.active() == true) {
                     input.style.backgroundColor = "#CC0000";
                     input.style.color = "white";
                 } else {
+
                     input.style.backgroundColor = "green";
                     input.style.color = "white";
 
-                    // getCongig({
-                    //     method: 'POST',
-                    //     url: "/None",
-                    //     data: {
-                    //         email: 'naelson.x.x@gmail.com',
-                    //         password: 'xxxxxx'
-                    //     }
-                    // }).then(function(response) {
-                    //     console.log(response.data);
-                    // }).catch(err => console.log(err));
+                    if (!dataToConvert.methodPayment == 0 && !dataToConvert.currency == 0) {
 
+                        // send request
+                        getCongig({
+                            method: 'POST',
+                            url: (1) ? "/convert" : "{{ url('api/v1/convert')}}",
+                            data: {
+                                price: dataToConvert.inputValue,
+                                md_payment: dataToConvert.methodPayment,
+                                product_cur: dataToConvert.currency
+                            }
+                        }).then(function(response) {
+                            console.log(response);
+                            // Object.keys(response.data).forEach(function(key, offset) {});
+
+                        }).catch(err => console.log(err));
+
+                    }
                 }
             });
 
