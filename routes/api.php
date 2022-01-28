@@ -40,5 +40,7 @@ Route::prefix('v1')->group(function () {
       $res = Http::get('https://economia.awesomeapi.com.br/json/all');
       return $res->json();
     });
+
+
   });
 });

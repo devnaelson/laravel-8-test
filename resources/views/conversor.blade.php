@@ -46,7 +46,7 @@
                 </div>
                 <div class="col-2">
                     <label for="target_value" class="p-3 m-1">Valor da Compra em BRL</label>
-                    <input type="text" class="form-control  text-center" placeholder="XXXXXX" id="target_value">
+                    <input type="text" class="form-control  text-center" id="target_value">
                 </div>
                 <div class="col-3">
                     <label for="paymentMethod" class="p-3 m-1">Formas de pagamento...</label>
@@ -85,7 +85,12 @@
 
     </div>
 
+
+
     <script type="module">
+        $(function() {
+            $('#target_value').maskMoney();
+        })
         //Valor da Compra em BRL (deve ser maior que R$ 1.000,00 e menor que R$ 100.000,00) alert se > x ou < x
 
         localStorage.setItem('token_gio', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5NTc1NWYzZS0xN2Q2LTQ3YTctYTg3OS02ZmEzZDI5YTA0ZjQiLCJqdGkiOiIzMjk4Zjk3NTgzMzcwZWM5YTZkMzY4Y2QwY2FlYmY3Yzk0ZTBkMDk0NzRjNDFkOTBhMGY3YmM3NzJlMmZjM2M5N2E0OTQ2ZDU4MGE2OTBmYSIsImlhdCI6MTY0MzMxMzQ5My41MDM0MjcsIm5iZiI6MTY0MzMxMzQ5My41MDM0MjksImV4cCI6MTY3NDg0OTQ5My40OTYzNDcsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.dADAF8f2cBIodG2uq2ELhvgEm8eONGBCfTQNeCeQk6LbwpNgD1kTwuQmQL1Z8S_OZQRp1dCvshzj5gZJMCWxZk7BNk9Ycv9z6TVTrcBYtNsfjRU_L4WgRORH5dKAH6Zbz5MHg3hI3Jl22WQCKb0WHAvNDvQEFhygdD5dPb_RRUMjvFelElgb6MmqqUzX6pKWgfdIb85fYgQiDyNJn-89fw1JvBu6e8cnC5CEjzXVw_pWrb93j_uj7zAiKwkWyfylarTUYXECMLyupqf2JYe57878zBsKOrqKl0cvdQlyQOHysd5wk0i33bKhgmlhuP7B2qqfWtNftCba7ETrn-2qzsX5agjnWVm-fm5s-g1Gh51iapqRQt7KqN07PiNLnRRIF-F3nl1OHq8TQy9YNc8dlY15TIsY7Fs0Fa-6wjg4DHKNgdKbkqpW7wJFhDdnVrBiC2QeoiAJGsJeB8CB4pdSxox2ORUE8LheYnxq0IXWda6hI-O9hNx-AjqBflJNWggislTHahqfXH1RaomOl-Y7JkxVB2idXnOWPNPka3XyzpVxiVX4PpWRgelwEzdvxpiU110IN4W_3Li-iUZSETehh3gJ3qqQ_bGDnkBTHnPMcfqwFrO6_L-35WczFK5E1MLkycZSP_8_KZ_IssFMX9hKbzxy11i1Sjjl5eEC6MFWx_k')
@@ -126,7 +131,11 @@
         setInterval(function() {
 
             //value
-            var inputValue = document.getElementById('target_value');
+            let formatedVAl = document.getElementById('target_value').value;
+            let unformated = formatedVAl.replaceAll(",", "");
+            AlertConditional(formatedVAl, unformated, function(action) {
+                console.log(action);
+            });
 
             //payment-method
             let elpaymentMethod = document.getElementById('paymentMethod');
@@ -137,7 +146,7 @@
 
             //currency
             let elementCurrency = document.getElementById('targetSelect');
-            
+
             elementCurrency.addEventListener('change', function() {
                 var value = this.options[this.selectedIndex].value;
                 var text = this.options[this.selectedIndex].text; //console.log(text);
@@ -163,6 +172,32 @@
         // request(axios, "{{ url('FullUrl')}}").then(data => {
         //     console.log(data);
         // }).catch(err => console.log(err));
+
+
+        function AlertConditional(formatedVAl, valCalculater, callback) {
+            if (formatedVAl.length > 0) {
+                let info_module = {
+                    msg: null,
+                    active(bool) {
+                        return bool;
+                    },
+                };
+                if (valCalculater < 1000.00) {
+                    info_module.msg = "Valor menor que" + formatedVAl + " not allowed";
+                    info_module.active(true);
+                    callback(info_module);
+                } else {
+                    if (valCalculater > 100000.00) {
+                        info_module.msg = "Valor maior que " + formatedVAl + " not allowed";
+                        info_module.active(true);
+                        callback(info_module);
+                    } else if (valCalculater <= 100000.00 && valCalculater >= 1000.00) {
+                        info_module.active(false);
+                        callback(info_module);
+                    }
+                }
+            }
+        }
     </script>
 
 </body>

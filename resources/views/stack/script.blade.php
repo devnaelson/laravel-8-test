@@ -1,6 +1,7 @@
 @push('scripts-axios')
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js">
-</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/gh/plentz/jquery-maskmoney@master/dist/jquery.maskMoney.min.js" type="text/javascript"></script>
 @endpush
 
 @push('stylesheet')
