@@ -137,6 +137,7 @@
 
             //currency
             let elementCurrency = document.getElementById('targetSelect');
+            
             elementCurrency.addEventListener('change', function() {
                 var value = this.options[this.selectedIndex].value;
                 var text = this.options[this.selectedIndex].text; //console.log(text);
