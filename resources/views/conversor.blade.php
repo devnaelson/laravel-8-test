@@ -51,8 +51,9 @@
                 <div class="col-3">
                     <label for="paymentMethod" class="p-3 m-1">Formas de pagamento...</label>
                     <select class="form-select  text-center" id="paymentMethod">
-                        <option value="1.45">Boleto, taxa de 1,45%</option>
-                        <option value="7.63">Cartão de crédito, taxa de 7,63%</option>
+                        <option></option>
+                        <option value="{val: 1.45,type:boleto}">Boleto, taxa de 1,45%</option>
+                        <option value="{val:7.63,type:card}">Cartão de crédito, taxa de 7,63%</option>
                     </select>
                 </div>
                 <div class="col-1">
@@ -63,6 +64,7 @@
                 <div class="col-2">
                     <label for="label" class="p-3 m-1">Moeda de compra </label>
                     <select class="form-select text-center" id="targetSelect">
+                        <option></option>
                     </select>
                 </div>
         </article>
@@ -111,6 +113,7 @@
             Object.keys(response.data).forEach(function(key, offset) {
 
                 let volate = {
+                    'type': response.data[key].code,
                     'ask': response.data[key].ask,
                     'bid': response.data[key].bid,
                     'high': response.data[key].high,
@@ -128,19 +131,26 @@
 
         }).catch(err => console.log(err));
 
+
         setInterval(function() {
+
+            let dataToConvert = {
+                inputValue: undefined,
+                methodPayment: undefined,
+                Currency: undefined,
+            };
 
             //value
             var input = document.getElementById('target_value');
             let formatedVAl = input.value;
             let unformated = formatedVAl.replaceAll(",", "");
             AlertConditional(formatedVAl, unformated, function(action) {
-                if(action.active() == true){
+                if (action.active() == true) {
                     input.style.backgroundColor = "#CC0000";
                     input.style.color = "white";
-                }else {
-                    input.style.backgroundColor = null;
-                    input.style.color = "black";
+                } else {
+                    input.style.backgroundColor = "green";
+                    input.style.color = "white";
                 }
             });
 
@@ -174,7 +184,6 @@
                 };
                 if (valCalculater < 1000.00) {
                     info_module.msg = "Valor menor que" + formatedVAl + " not allowed";
-                    info_module.active();
                     callback(info_module);
                 } else {
                     if (valCalculater > 100000.00) {
