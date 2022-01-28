@@ -99,10 +99,9 @@
         // send request
         getCongig({
             method: 'GET',
-            url: "/sAllCurrency", // url: "{{ url('/test/request/validation')}}",
-        }).then(function(response) {
+            url: (1) ? "/sAllCurrency" : "{{ url('api/v1/sAllCurrency')}}",
 
-            //console.log(response.data);
+        }).then(function(response) {
 
             Object.keys(response.data).forEach(function(key, offset) {
 
