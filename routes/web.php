@@ -28,8 +28,13 @@ Route::get('/guzzle', function () {
     echo "<pre>";
     dd($res->json());
     echo "</pre>";
+
 });
 
 Route::get('/showProviders', function () {
+    dd(app());
+});
+
+Route::get('/', function () {
     dd(app());
 });
