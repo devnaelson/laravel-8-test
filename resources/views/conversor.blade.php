@@ -120,13 +120,10 @@
                 elementMain.appendChild(createSelect);
 
                 elementMain.addEventListener('change', function() {
-
                     var value = this.options[this.selectedIndex].value;
                     var text = this.options[this.selectedIndex].text; //console.log(text);
                     console.log(value);
-
                 });
-
             });
 
         }).catch(err => console.log(err));
