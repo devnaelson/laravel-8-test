@@ -104,10 +104,7 @@
         const getCongig = config("{{ url('api/v1/')}}");
 
         // send request
-        getCongig({
-            method: 'GET',
-            url: (1) ? "/sAllCurrency" : "{{ url('api/v1/sAllCurrency')}}",
-
+        getCongig({ method: 'GET', url: (1) ? "/sAllCurrency" : "{{ url('api/v1/sAllCurrency')}}",
         }).then(function(response) {
 
             Object.keys(response.data).forEach(function(key, offset) {
