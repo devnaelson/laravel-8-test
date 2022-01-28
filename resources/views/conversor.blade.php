@@ -51,7 +51,7 @@
                 <div class="col-3">
                     <label for="paymentMethod" class="p-3 m-1">Formas de pagamento...</label>
                     <select class="form-select  text-center" id="paymentMethod">
-                        <option></option>
+                        <option value="0"></option>
                         <option value='{"val": "1.45","type":"boleto"}'>Boleto, taxa de 1,45%</option>
                         <option value='{"val":"7.63","type":"card"}'>Cartão de crédito, taxa de 7,63%</option>
                     </select>
@@ -64,7 +64,7 @@
                 <div class="col-2">
                     <label for="label" class="p-3 m-1">Moeda de compra </label>
                     <select class="form-select text-center" id="targetSelect">
-                        <option></option>
+                        <option value="0"></option>
                     </select>
                 </div>
         </article>
@@ -200,7 +200,7 @@
 
 
 
-        }, 300)
+        }, 1000)
 
         function AlertConditional(formatedVAl, valCalculater, callback) {
             if (formatedVAl.length > 0) {

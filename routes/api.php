@@ -28,7 +28,7 @@ Route::prefix('v1')->group(function () {
 
   #Route::resource('peoples', People::class);
 
-  Route::middleware('token_auth')->group(function () {
+  Route::middleware('token_auth', 'throttle:10000000,1')->group(function () {
     Route::post('test', [TestController::class, 'index']);
     Route::post('create', [PeoplesController::class, 'store']);
     Route::get('selectAll', [PeoplesController::class, 'all']);
