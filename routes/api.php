@@ -51,8 +51,11 @@ Route::prefix('v1')->group(function () {
       $bid = $input['product_cur']['bid'];
 
       $rateVal = $input['md_payment']['val'];
-      $mdType = $input['md_payment']['type'];
+      $mhdType = $input['md_payment']['type'];
+
       $val_disMd = $valueBought * $rateVal / 100;
+
+      $valMhdDiscont = $valueBought - $val_disMd;
 
       $val_disUpDown = 0;
       if ($val_disMd < 3000.00) {
@@ -61,7 +64,19 @@ Route::prefix('v1')->group(function () {
         $val_disUpDown = $valueBought * 2 / 100;
       }
 
-      return $val_disUpDown;
+      return response()->json([
+        'cur_origim' => 'BRL',
+        'cur_destiny' => $type,
+        'val_input' => $valueBought,
+        'mhd_payment' => $mhdType,
+        'val_cur_destiny' => $bid,
+        'val_buy' => $bid,
+        'rate_payment' => $bid, //Taxa de pagamento: R$ 72,50
+        'rate_conversion' => $val_disUpDown, //Taxa de conversão: R$ 50,00
+        'discont_onversion' => $valMhdDiscont, //Valor utilizado para conversão descontando as taxas: R$ 4.877,50
+      ]);
+
+      
     });
   });
 });
