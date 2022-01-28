@@ -45,8 +45,23 @@ Route::prefix('v1')->group(function () {
     Route::post('convert', function (Request $request) {
 
       $input = $request->all();
+      $valueBought = $input['price'];
 
-      return $input['price'];
+      $type = $input['product_cur']['type'];
+      $bid = $input['product_cur']['bid'];
+
+      $rateVal = $input['md_payment']['val'];
+      $mdType = $input['md_payment']['type'];
+      $val_disMd = $valueBought * $rateVal / 100;
+
+      $val_disUpDown = 0;
+      if ($val_disMd < 3000.00) {
+        $val_disUpDown = $valueBought * 1 / 100;
+      } else  if ($val_disMd > 3000.00) {
+        $val_disUpDown = $valueBought * 2 / 100;
+      }
+
+      return $val_disUpDown;
     });
   });
 });

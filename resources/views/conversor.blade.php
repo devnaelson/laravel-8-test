@@ -224,8 +224,6 @@
             }
         }
 
-
-
         var currentdate = new Date();
         var datetime = currentdate.getDate() + "/" + (currentdate.getMonth() + 1) + "/" + currentdate.getFullYear();
         document.getElementById('dataCota').value = datetime;
