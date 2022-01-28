@@ -22,14 +22,14 @@ Route::get('/currency', function () {
 });
 
 Route::get('/guzzle', function () {
-    
+
     $res = Http::get('https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL,BTC-BRL');
+
     echo "<pre>";
     dd($res->json());
     echo "</pre>";
-    
 });
 
-Route::get('/', function () {
-    return view('conversor');
+Route::get('/showProviders', function () {
+    dd(app());
 });
