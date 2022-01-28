@@ -131,7 +131,7 @@
 
         setInterval(function() {
 
-            //Value
+            //value
             var inputValue = document.getElementById('target_value');
 
             //payment-method
