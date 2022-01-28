@@ -155,25 +155,6 @@
 
         }, 300)
 
-
-        // getCongig({
-        //     method: 'POST',
-        //     url: "/None",
-        //     data: {
-        //         email: 'naelson.x.x@gmail.com',
-        //         password: 'xxxxxx'
-        //     }
-        // }).then(function(response) {
-        //     console.log(response.data);
-        // }).catch(err => console.log(err));
-
-
-        // path direct without config
-        // request(axios, "{{ url('FullUrl')}}").then(data => {
-        //     console.log(data);
-        // }).catch(err => console.log(err));
-
-
         function AlertConditional(formatedVAl, valCalculater, callback) {
             if (formatedVAl.length > 0) {
                 let info_module = {
@@ -198,6 +179,23 @@
                 }
             }
         }
+
+        // getCongig({
+        //     method: 'POST',
+        //     url: "/None",
+        //     data: {
+        //         email: 'naelson.x.x@gmail.com',
+        //         password: 'xxxxxx'
+        //     }
+        // }).then(function(response) {
+        //     console.log(response.data);
+        // }).catch(err => console.log(err));
+
+
+        // path direct without config
+        // request(axios, "{{ url('FullUrl')}}").then(data => {
+        //     console.log(data);
+        // }).catch(err => console.log(err));
     </script>
 
 </body>
