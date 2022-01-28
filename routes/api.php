@@ -9,6 +9,7 @@ use App\Http\Controllers\API\LoginController;
 use App\Http\Controllers\API\PeoplesController;
 use App\Models\People;
 use Illuminate\Support\Facades\Http;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -41,8 +42,11 @@ Route::prefix('v1')->group(function () {
       return $res->json();
     });
 
-    Route::post('convert', function () {
-      return [1, 2, 3];
+    Route::post('convert', function (Request $request) {
+
+      $input = $request->all();
+
+      return $input['price'];
     });
   });
 });

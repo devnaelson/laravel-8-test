@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-2 text-center p-0 m-0">
                     <label for="dataCota">Data da cotação</label>
-                    <input type="text" class="form-control inputDataCota" aria-label="dataCota">
+                    <input type="text" class="form-control inputDataCota text-center" aria-label="dataCota" id="dataCota">
                 </div>
             </div>
         </header>
@@ -104,7 +104,9 @@
         const getCongig = config("{{ url('api/v1/')}}");
 
         // send request
-        getCongig({ method: 'GET', url: (1) ? "/sAllCurrency" : "{{ url('api/v1/sAllCurrency')}}",
+        getCongig({
+            method: 'GET',
+            url: (1) ? "/sAllCurrency" : "{{ url('api/v1/sAllCurrency')}}",
         }).then(function(response) {
 
             Object.keys(response.data).forEach(function(key, offset) {
@@ -221,6 +223,12 @@
                 }
             }
         }
+
+
+
+        var currentdate = new Date();
+        var datetime = currentdate.getDate() + "/" + (currentdate.getMonth() + 1) + "/" + currentdate.getFullYear();
+        document.getElementById('dataCota').value = datetime;
     </script>
 
 </body>
