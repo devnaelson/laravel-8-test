@@ -149,7 +149,7 @@
                 console.log(value);
             });
 
-        }, 400)
+        }, 300)
 
 
         // getCongig({
