@@ -131,10 +131,17 @@
         setInterval(function() {
 
             //value
-            let formatedVAl = document.getElementById('target_value').value;
+            var input = document.getElementById('target_value');
+            let formatedVAl = input.value;
             let unformated = formatedVAl.replaceAll(",", "");
             AlertConditional(formatedVAl, unformated, function(action) {
-                console.log(action);
+                if(action.active() == true){
+                    input.style.backgroundColor = "#CC0000";
+                    input.style.color = "white";
+                }else {
+                    input.style.backgroundColor = null;
+                    input.style.color = "black";
+                }
             });
 
             //payment-method
@@ -158,22 +165,23 @@
         function AlertConditional(formatedVAl, valCalculater, callback) {
             if (formatedVAl.length > 0) {
                 let info_module = {
-                    msg: null,
-                    active(bool) {
-                        return bool;
+                    msg: undefined,
+                    active() {
+                        if (this.msg != undefined)
+                            return true;
+                        else return false;
                     },
                 };
                 if (valCalculater < 1000.00) {
                     info_module.msg = "Valor menor que" + formatedVAl + " not allowed";
-                    info_module.active(true);
+                    info_module.active();
                     callback(info_module);
                 } else {
                     if (valCalculater > 100000.00) {
                         info_module.msg = "Valor maior que " + formatedVAl + " not allowed";
-                        info_module.active(true);
                         callback(info_module);
                     } else if (valCalculater <= 100000.00 && valCalculater >= 1000.00) {
-                        info_module.active(false);
+                        info_module.msg = undefined;
                         callback(info_module);
                     }
                 }
