@@ -64,19 +64,24 @@ Route::prefix('v1')->group(function () {
         $val_disUpDown = $valueBought * 2 / 100;
       }
 
+      /*
+
+      Aplicar taxa de 2% pela conversão para valores abaixo de R$ 3.000,00 e 1% para valores maiores que R$ 3.000,00, 
+      essa taxa deve ser aplicada apenas no valor da compra e não sobre o valor já com a taxa de forma de pagamento.
+      */
+      $unknow = $valueBought - $val_disUpDown;
+
       return response()->json([
         'cur_origim' => 'BRL',
         'cur_destiny' => $type,
         'val_input' => $valueBought,
         'mhd_payment' => $mhdType,
         'val_cur_destiny' => $bid,
-        'val_buy' => $bid,
-        'rate_payment' => $bid, //Taxa de pagamento: R$ 72,50
+        'val_buy' => $unknow,
+        'rate_payment' => $val_disMd, //Taxa de pagamento: R$ 72,50
         'rate_conversion' => $val_disUpDown, //Taxa de conversão: R$ 50,00
         'discont_onversion' => $valMhdDiscont, //Valor utilizado para conversão descontando as taxas: R$ 4.877,50
       ]);
-
-      
     });
   });
 });
