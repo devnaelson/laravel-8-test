@@ -134,7 +134,7 @@
             //Value
             var inputValue = document.getElementById('target_value');
 
-            //payment-Forma
+            //payment-method
             let elpaymentMethod = document.getElementById('paymentMethod');
             elpaymentMethod.addEventListener('change', function() {
                 var value = this.options[this.selectedIndex].value;
