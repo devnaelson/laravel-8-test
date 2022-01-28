@@ -18,7 +18,7 @@
 
     <div class="container-fluid">
 
-        <header class="currentHeader">
+        <header class="currentHeader" id="transform">
             <div class="row">
                 <div class="col-2 text-center p-0 m-0">
                     <label for="dataCota">Data da cotação</label>
@@ -52,8 +52,8 @@
                     <label for="paymentMethod" class="p-3 m-1">Formas de pagamento...</label>
                     <select class="form-select  text-center" id="paymentMethod">
                         <option></option>
-                        <option value="{val: 1.45,type:boleto}">Boleto, taxa de 1,45%</option>
-                        <option value="{val:7.63,type:card}">Cartão de crédito, taxa de 7,63%</option>
+                        <option value='{"val": "1.45","type":"boleto"}'>Boleto, taxa de 1,45%</option>
+                        <option value='{"val":"7.63","type":"card"}'>Cartão de crédito, taxa de 7,63%</option>
                     </select>
                 </div>
                 <div class="col-1">
@@ -131,8 +131,30 @@
 
         }).catch(err => console.log(err));
 
+        //payment-method
+        var value_pay = 0;
+        let elpaymentMethod = document.getElementById('paymentMethod');
+        elpaymentMethod.addEventListener('change', function() {
+            var inter_pay = this.options[this.selectedIndex].value;
+            value_pay = JSON.parse(inter_pay);
+            console.log(value_pay);
+        });
+
+        //currency
+        var value_currency = 0;
+        let elementCurrency = document.getElementById('targetSelect');
+        elementCurrency.addEventListener('change', function() {
+            var inter_currency = this.options[this.selectedIndex].value;
+            value_currency = JSON.parse(inter_currency);
+            console.log(value_currency);
+        });
 
         setInterval(function() {
+
+            //value
+            var input = document.getElementById('target_value');
+            let formatedVAl = input.value;
+            let unformated = formatedVAl.replaceAll(",", "");
 
             let dataToConvert = {
                 inputValue: undefined,
@@ -140,10 +162,10 @@
                 Currency: undefined,
             };
 
-            //value
-            var input = document.getElementById('target_value');
-            let formatedVAl = input.value;
-            let unformated = formatedVAl.replaceAll(",", "");
+            dataToConvert.inputValue = unformated;
+            dataToConvert.methodPayment = value_pay;
+            dataToConvert.Currency = value_currency;
+
             AlertConditional(formatedVAl, unformated, function(action) {
                 if (action.active() == true) {
                     input.style.backgroundColor = "#CC0000";
@@ -151,24 +173,24 @@
                 } else {
                     input.style.backgroundColor = "green";
                     input.style.color = "white";
+
+                    // getCongig({
+                    //     method: 'POST',
+                    //     url: "/None",
+                    //     data: {
+                    //         email: 'naelson.x.x@gmail.com',
+                    //         password: 'xxxxxx'
+                    //     }
+                    // }).then(function(response) {
+                    //     console.log(response.data);
+                    // }).catch(err => console.log(err));
+
                 }
             });
 
-            //payment-method
-            let elpaymentMethod = document.getElementById('paymentMethod');
-            elpaymentMethod.addEventListener('change', function() {
-                var value = this.options[this.selectedIndex].value;
-                console.log(value);
-            });
+            console.log(dataToConvert);
 
-            //currency
-            let elementCurrency = document.getElementById('targetSelect');
 
-            elementCurrency.addEventListener('change', function() {
-                var value = this.options[this.selectedIndex].value;
-                var text = this.options[this.selectedIndex].text; //console.log(text);
-                console.log(value);
-            });
 
         }, 300)
 
