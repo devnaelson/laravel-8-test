@@ -112,21 +112,45 @@
                     'low': response.data[key].low
                 };
 
-                let elementMain = document.getElementById('targetSelect');
+                let elementCurrency = document.getElementById('targetSelect');
                 const createSelect = document.createElement("option");
 
                 createSelect.innerText = response.data[key].code;
                 createSelect.value = JSON.stringify(volate);
-                elementMain.appendChild(createSelect);
+                elementCurrency.appendChild(createSelect);
 
-                elementMain.addEventListener('change', function() {
+                elementCurrency.addEventListener('change', function() {
                     var value = this.options[this.selectedIndex].value;
                     var text = this.options[this.selectedIndex].text; //console.log(text);
                     console.log(value);
                 });
+
             });
 
         }).catch(err => console.log(err));
+
+        setInterval(function() {
+
+            //Value
+            var inputValue = document.getElementById('target_value');
+
+            //payment-Forma
+            let elpaymentMethod = document.getElementById('paymentMethod');
+            elpaymentMethod.addEventListener('change', function() {
+                var value = this.options[this.selectedIndex].value;
+                console.log(value);
+            });
+
+            //currency
+            let elementCurrency = document.getElementById('targetSelect');
+            elementCurrency.addEventListener('change', function() {
+                var value = this.options[this.selectedIndex].value;
+                var text = this.options[this.selectedIndex].text; //console.log(text);
+                console.log(value);
+            });
+
+        }, 400)
+
 
         // getCongig({
         //     method: 'POST',
