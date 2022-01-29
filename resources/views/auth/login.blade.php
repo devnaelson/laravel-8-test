@@ -53,8 +53,8 @@
     </div>
 
     <script type="module">
-        document.getElementById('btn_sub').addEventListener('click', authLogin);
 
+        document.getElementById('btn_sub').addEventListener('click', authLogin);
         function authLogin() {
 
             let intputEmail = document.getElementById('inputEmail').value;
