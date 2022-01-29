@@ -83,7 +83,8 @@
                         c_password: intputPassword
                     }
                 }).then(function(response) {
-                    console.log(response.data.data.message);
+                    console.log(response);
+                    alert(response.data.message);
                 }).catch(err => console.log(err));
 
             } else {
