@@ -78,7 +78,8 @@
                         password: intputPassword
                     }
                 }).then(function(response) {
-                    console.log(response);
+                    var success = response.data.data.name;
+                    localStorage.setItem('token_gio', response.data.data.token);
                 }).catch(err => console.log(err));
 
             } else {
