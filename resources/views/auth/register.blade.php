@@ -46,6 +46,9 @@
                     <br>
                     <label for="inputPassword" class="sr-only">Password</label>
                     <input type="password" id="inputPassword" class="form-control mt-1" placeholder="Password" required>
+                    <br>
+                    <a class="btn btn-link" href="{{ url('register')}}" role="button">Cadastrar?</a>
+                    <br>
                     <button class="btn btn-lg btn-primary btn-block mt-3" type="submit" id="btn_sub">Sign in</button>
                     <p class="mt-5 mb-3 text-muted">&copy; 2017-2022</p>
                 </form>
