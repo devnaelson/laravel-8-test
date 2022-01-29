@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <div class="col-2">
-                    <label for="label" class="p-3 m-1">Moeda de compra </label>
+                    <label for="label" class="p-3 m-1">Moeda de compra</label>
                     <select class="form-select text-center" id="targetSelect">
                         <option value="0"></option>
                     </select>
@@ -106,7 +106,7 @@
         // send request
         getCongig({
             method: 'GET',
-            url: (1) ? "/sAllCurrency" : "{{ url('api/v1/sAllCurrency')}}",
+            url: "/sAllCurrency",
         }).then(function(response) {
 
             Object.keys(response.data).forEach(function(key, offset) {
@@ -128,7 +128,10 @@
 
             });
 
-        }).catch(err => console.log(err));
+        }).catch(err => {
+            alert("Api Falhou, motivo desconhecido ainda! F5" + "\n" + "Veja o console, isso já aconteceu algumas vezes, tente esperar um pouco.")
+            console.log(err)
+        });
 
         //payment-method
         var value_pay = 0;
