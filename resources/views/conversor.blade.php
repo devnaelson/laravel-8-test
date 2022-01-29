@@ -129,7 +129,7 @@
             });
 
         }).catch(err => {
-            alert("Api Falhou, motivo desconhecido ainda! F5" + "\n" + "Veja o console, isso já aconteceu algumas vezes, tente esperar um pouco".
+            alert("Api Falhou, motivo desconhecido ainda! F5" + "\n" + "Veja o console, isso já aconteceu algumas vezes, tente esperar um pouco"
             + "Se necessário confere a imagem para ver, https://i.imgur.com/tuFKcIy.png talves seja o axio CDN externo.")
             console.log(err)
         });
