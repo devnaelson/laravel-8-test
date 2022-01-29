@@ -53,7 +53,7 @@
                     <select class="form-select  text-center" id="paymentMethod">
                         <option value="0"></option>
                         <option value='{"val": "1.45","type":"boleto"}'>Boleto, taxa de 1,45%</option>
-                        <option value='{"val":"7.63","type":"card"}'>Cartão de crédito, taxa de 7,63%</option>
+                        <option value='{"val":"7.63","type":"card"}'>Cartão de crédito, taxa de <strong>1,45</strong>%</option>
                     </select>
                 </div>
                 <div class="col-1">
