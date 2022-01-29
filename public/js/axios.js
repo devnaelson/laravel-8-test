@@ -1,6 +1,5 @@
 export default function config(url) {
     let tokenW = localStorage.getItem('token_gio');
-    console.log(tokenW);
     return axios.create({
         baseURL: url,
         timeout: 1000,
