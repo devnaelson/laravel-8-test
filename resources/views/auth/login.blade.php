@@ -1,4 +1,5 @@
 @include('stack.script')
+@stack('scripts-axios')
 <!doctype html>
 <html lang="en">
 
@@ -9,8 +10,8 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
     <title>Log in</title>
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
-    @stack('stylesheet')
+    @stack('stylesheet-sign-in')
+
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -27,8 +28,6 @@
             }
         }
     </style>
-    <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
 </head>
 
 <body class="text-center">
@@ -37,14 +36,14 @@
             <div class="col-4 tect-center">
             </div>
             <div class="col-4 text-center mt-5">
-                <form class="form-signin">
+                <form class="form-signin" onsubmit="return false;">
                     <h1 class="h3 mb-3 font-weight-normal">Please log in</h1>
-                    <label for="inputEmail" class="sr-only">Email address</label>
+                    <label for="inputEmail" class="sr-only">Email</label>
                     <input type="email" id="inputEmail" class="form-control mt-1" placeholder="Email address" required autofocus>
                     <br>
                     <label for="inputPassword" class="sr-only">Password</label>
                     <input type="password" id="inputPassword" class="form-control mt-1" placeholder="Password" required>
-                    <button class="btn btn-lg btn-primary btn-block mt-3" type="submit">Sign in</button>
+                    <button class="btn btn-lg btn-primary btn-block mt-3" type="submit" id="btn_sub">Sign in</button>
                     <p class="mt-5 mb-3 text-muted">&copy; 2017-2022</p>
                 </form>
             </div>
@@ -52,6 +51,42 @@
             </div>
         </div>
     </div>
+
+    <script type="module">
+        document.getElementById('btn_sub').addEventListener('click', authLogin);
+
+        function authLogin() {
+
+            let intputEmail = document.getElementById('inputEmail').value;
+            let intputPassword = document.getElementById('inputPassword').value;
+
+            if (intputEmail.length > 0 && intputPassword.length >= 5) {
+
+                var config = axios.create({
+                    baseURL: "{{ url('api/v1/')}}",
+                    timeout: 1000,
+                    headers: {
+                        'Accept': 'application/json',
+                    }
+                });
+
+                config({
+                    method: 'POST',
+                    url: (1) ? "/login" : "{{ url('api/v1/login')}}",
+                    data: {
+                        email: intputEmail,
+                        password: intputPassword
+                    }
+                }).then(function(response) {
+                    console.log(response);
+                }).catch(err => console.log(err));
+
+            } else {
+                alert("This password which input is much short!");
+            }
+
+        }
+    </script>
 </body>
 
 </html>

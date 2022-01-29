@@ -42,7 +42,6 @@ class RegisterController extends BaseController
         $success['name'] =  $user->name;
         $success['access_token'] =  $user->createToken('authToken')->accessToken;
         return $this->sendResponse($success, 'User register successfully.');
-        
     }
 
     /**
@@ -58,13 +57,13 @@ class RegisterController extends BaseController
         ])) {
 
             $user = Auth::user();
-
             $success['token'] =  $user->createToken('authToken')->accessToken;
             $success['name'] =  $user->name;
 
             return $this->sendResponse($success, 'User login successfully.');
+            
         } else {
-            return $this->sendError('Unauthorised.', ['error' => 'Unauthorised']);
+            return $this->sendResponse('Unauthorised.', ['error' => 'Unauthorised']);
         }
     }
 }

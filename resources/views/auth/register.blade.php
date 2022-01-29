@@ -9,9 +9,7 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
     <title>Signin Template · Bootstrap</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
-    @stack('stylesheet')
+    @stack('stylesheet-sign-in')
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -29,7 +27,6 @@
         }
     </style>
     <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
 </head>
 
 <body class="text-center">
