@@ -75,19 +75,22 @@
                 <div class="col-4">
                     <h4>Resultado da conversão</h4>
                     <div class="resStyle">
-                        <ul>
-                            <li class="liPropriets"> Conversão de: <strong class="text-secondary">Real/BRL (790)</strong></li>
-                            <li class="liPropriets"> Valor a converter: <strong class="text-secondary">1,00</strong></li>
+                        <ul id="showRes">
+                            <li class="liPropriets"> Conversão origim: <strong class="text-secondary" id="coverOrigem">-</strong></li>
+                            <li class="liPropriets"> Conversão destino: <strong class="text-secondary" id="coverDestiny">-</strong></li>
+                            <li class="liPropriets"> Conversão valor: <strong class="text-secondary" id="coverValor">-</strong></li>
+                            <li class="liPropriets"> Valor Moeda destino: <strong class="text-secondary" id="valCurrencyDestiny">-</strong></li>
+                            <li class="liPropriets"> Valor Comprado: <strong class="text-secondary" id="valBuyedDestiny">-</strong></li>
+                            <li class="liPropriets"> Taxa metodo pagamento: <strong class="text-secondary" id="ratePaymentMethod">-</strong></li>
+                            <li class="liPropriets"> Taxa Conversão maior menor: <strong class="text-secondary" id="rateConversion">-</strong></li>
+                            <li class="liPropriets"> Taxa Valor disconto metodo pagamento: <strong class="text-secondary" id="valDiscontOfTypePay">-</strong></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-
     </div>
-
-
 
     <script type="module">
         $(function() {
@@ -183,8 +186,20 @@
                                 product_cur: dataToConvert.currency
                             }
                         }).then(function(response) {
+
                             console.log(response);
-                            // Object.keys(response.data).forEach(function(key, offset) {});
+                            Object.keys(response.data).forEach(function(key, offset) {
+
+                                if (key == 'cur_origim') document.getElementById('coverOrigem').innerHTML = response.data[key];
+                                if (key == 'cur_destiny') document.getElementById('coverDestiny').innerHTML = response.data[key];
+                                if (key == 'val_input') document.getElementById('coverValor').innerHTML = response.data[key];
+                                if (key == 'mhd_payment') document.getElementById('valCurrencyDestiny').innerHTML = response.data[key];
+                                if (key == 'val_cur_destiny') document.getElementById('valBuyedDestiny').innerHTML = response.data[key];
+                                if (key == 'val_buy') document.getElementById('ratePaymentMethod').innerHTML = response.data[key];
+                                if (key == 'rate_payment') document.getElementById('rateConversion').innerHTML = response.data[key];
+                                if (key == 'rate_conversion') document.getElementById('valDiscontOfTypePay').innerHTML = response.data[key];
+
+                            });
 
                         }).catch(err => console.log(err));
 
