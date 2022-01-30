@@ -36,6 +36,22 @@
             </div>
         </div>
 
+        <article class="op1">
+            <div class="row">
+                <div class="col-4">
+
+                </div>
+                <div class="col-4">
+                    <label for="inputCard">Taxa Card</label>
+                    <input type="text" class="form-control inputDataCota text-center" aria-label="dataCota" id="inputCard" value="7.63">
+                </div>
+                <div class="col-4">
+                    <label for="inputBoleto">Taxa Boleto</label>
+                    <input type="text" class="form-control inputDataCota text-center" aria-label="dataCota" id="inputBoleto" value="1.45">
+                </div>
+            </div>
+        </article>
+
         <article class="op">
             <div class="row">
                 <div class="col-1">
@@ -52,8 +68,8 @@
                     <label for="paymentMethod" class="p-3 m-1">Formas de pagamento...</label>
                     <select class="form-select  text-center" id="paymentMethod">
                         <option value="0"></option>
-                        <option value='{"val": "1.45","type":"boleto"}'>Boleto, taxa de 1,45%</option>
-                        <option value='{"val":"7.63","type":"card"}'>Cartão de crédito, taxa de <strong>1,45</strong>%</option>
+                        <option id="boleto"></option>
+                        <option id="card"></option>
                     </select>
                 </div>
                 <div class="col-1">
@@ -129,8 +145,8 @@
             });
 
         }).catch(err => {
-            alert("Api Falhou, motivo desconhecido ainda! F5" + "\n" + "Veja o console, isso já aconteceu algumas vezes, tente esperar um pouco"
-            + "Se necessário confere a imagem para ver, https://i.imgur.com/tuFKcIy.png talves seja o axio CDN externo.")
+            alert("Api Falhou, motivo desconhecido ainda! F5" + "\n" + "Veja o console, isso já aconteceu algumas vezes, tente esperar um pouco" +
+                "Se necessário confere a imagem para ver, https://i.imgur.com/tuFKcIy.png talves seja o axio CDN externo.")
             console.log(err)
         });
 
@@ -153,6 +169,22 @@
         });
 
         setInterval(function() {
+
+            let valBoleto = document.getElementById('inputBoleto').value;
+            let valCard = document.getElementById('inputCard').value;
+
+            let boleto = '{"val": "' + valBoleto + '","type":"boleto"}';
+            let card = '{"val":"' + valCard + '","type":"card"}';
+
+            let boletoHtml = 'Boleto, taxa de ' + valBoleto + '%';
+            let cardHtml = 'Boleto, taxa de ' + valCard + '%';
+
+            let insertBoleto = document.getElementById('boleto')
+            insertBoleto.innerHTML = boletoHtml;
+            insertBoleto.value = boleto;
+            let insertCard = document.getElementById('card')
+            insertCard.innerHTML = cardHtml;
+            insertCard.value = card;
 
             //value
             var input = document.getElementById('target_value');

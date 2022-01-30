@@ -9,6 +9,19 @@ body {
 
 }
 
+.op1 {
+    margin-top: 5px;
+    background-color: #f8f9fa;
+    padding-left: 50px;
+    text-align: center;
+    border-radius: 20px;
+    height: 50px !important;
+}
+
+.op1 > div {
+    padding: 10px;
+}
+
 .op {
     margin-top: 25px;
     background-color: #f8f9fa;
