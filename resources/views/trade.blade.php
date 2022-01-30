@@ -182,6 +182,7 @@
             let insertBoleto = document.getElementById('boleto')
             insertBoleto.innerHTML = boletoHtml;
             insertBoleto.value = boleto;
+            
             let insertCard = document.getElementById('card')
             insertCard.innerHTML = cardHtml;
             insertCard.value = card;
