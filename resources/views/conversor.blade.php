@@ -38,17 +38,17 @@
 
         <article class="op">
             <div class="row">
-                <div class="col-2">
+                <div class="col-1">
                     <label for="myCurrency" class="p-3 m-1">Moeda</label>
                     <select class="form-select  text-center" disabled id="myCurrency">
                         <option value="1">BRL</option>
                     </select>
                 </div>
-                <div class="col-2">
+                <div class="col-3">
                     <label for="target_value" class="p-3 m-1">Valor da Compra em BRL</label>
                     <input type="text" class="form-control  text-center" id="target_value">
                 </div>
-                <div class="col-3">
+                <div class="col-auto">
                     <label for="paymentMethod" class="p-3 m-1">Formas de pagamento...</label>
                     <select class="form-select  text-center" id="paymentMethod">
                         <option value="0"></option>
@@ -61,7 +61,7 @@
                         <i class="fas fa-exchange"></i>
                     </div>
                 </div>
-                <div class="col-2">
+                <div class="col-auto">
                     <label for="label" class="p-3 m-1">Moeda de compra</label>
                     <select class="form-select text-center" id="targetSelect">
                         <option value="0"></option>
