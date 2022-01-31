@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Http;
 
 Route::get('test', [TestController::class, 'index']);
 
-Route::get('/currency', function () {
-    return view('conversor');
+Route::get('/exchange', function () {
+    return view('trade');
 });
 
 Route::get('/guzzle', function () {
