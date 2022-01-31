@@ -4,6 +4,8 @@ use App\Http\Controllers\API\PeoplesController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,7 +23,9 @@ Route::get('/exchange', function () {
     return view('trade');
 });
 
-Route::get('/guzzle', function () {
+Route::get('/guzzle', function (Request $request) {
+    $request->header('Access-Control-Allow-Origin', '*');
+    $request->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     $res = Http::get('https://economia.awesomeapi.com.br/json/all');
     return $res->json();
 });

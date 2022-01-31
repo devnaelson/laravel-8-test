@@ -119,11 +119,20 @@
         //Base Url api/v1/ after use only endpoints
         const getCongig = config("{{ url('api/v1/')}}");
 
-        // send request
-        getCongig({
+        var cfgAxioRequest = axios.create({
+            baseURL: "{{ url('api/v1/')}}",
+            timeout: 1000,
+            headers: {
+                'Accept': 'application/json',
+                'Authorization': 'bearer' + localStorage.getItem('token_gio')
+            }
+        });
+
+        cfgAxioRequest({
             method: 'GET',
             url: "/awesomeapiAll",
         }).then(function(response) {
+            console.log(response);
 
             Object.keys(response.data).forEach(function(key, offset) {
 
@@ -182,7 +191,7 @@
             let insertBoleto = document.getElementById('boleto')
             insertBoleto.innerHTML = boletoHtml;
             insertBoleto.value = boleto;
-            
+
             let insertCard = document.getElementById('card')
             insertCard.innerHTML = cardHtml;
             insertCard.value = card;
