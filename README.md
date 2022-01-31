@@ -5,7 +5,7 @@
 - Autenticação com o usuário passaport autorized via midleware
 - Request routers com libary AxioJs 
 
-##### Limite de requisição Too Many Attempts, resolvido
+##### Limite de requisição erro "Too Many Attempts", resolvido
 ```
 - [+] Fix Route::middleware('token_auth', 'throttle:10000000,1')
 ```
