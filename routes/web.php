@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\PeoplesController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Http;
@@ -24,8 +25,6 @@ Route::get('/exchange', function () {
 });
 
 Route::get('/guzzle', function (Request $request) {
-    $request->header('Access-Control-Allow-Origin', '*');
-    $request->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     $res = Http::get('https://economia.awesomeapi.com.br/json/all');
     return $res->json();
 });
@@ -35,9 +34,11 @@ Route::get('/showProviders', function () {
 });
 
 Route::get('/register', function () {
-    return view('auth/register');
+    return view('auth.register');
 });
 
 Route::get('/', function () {
-    return view('auth/login');
+    return view('auth.login');
 });
+
+Route::get('/send-mail', [MailController::class, 'sendEmail']);

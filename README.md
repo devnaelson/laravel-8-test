@@ -1,4 +1,4 @@
-#### Sobre sitema
+#### Sobre sistema
 - Sistema de conversão de moeda, feito em html,javascript puro em 99%, Php MVC laravel em real time.
 - Mask formato jquery 
 - PHP 8.0.14 (cli)
