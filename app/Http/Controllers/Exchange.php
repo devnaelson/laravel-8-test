@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 class Exchange extends Controller
 {
-    public function getInput(Request $request): void
+    public function getInput(Request $request)
     {
         $input = $request->all();
-        $this->setChange($input);
+        return $this->setChange($input);
     }
     public function setChange($input)
     {
