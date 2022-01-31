@@ -81,9 +81,11 @@
                         password: intputPassword
                     }
                 }).then(function(response) {
+
                     var success = response.data.data.name;
                     window.location.href = "{{ url('exchange')}}";
                     localStorage.setItem('token_gio', response.data.data.token);
+
                 }).catch(err => console.log(err));
 
             } else {

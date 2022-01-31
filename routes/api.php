@@ -25,12 +25,8 @@ use Illuminate\Support\Facades\Http;
 
 Route::prefix('v1')->group(function () {
 
-  header('Access-Control-Allow-Origin: *');
-  header('Access-Control-Allow-Methods: *');
-  header('Access-Control-Allow-Headers: *');
-
   Route::post('register', [RegisterController::class, 'register']);
-  Route::post('login', [RegisterController::class, 'login']);
+  Route::post('login', [LoginController::class, 'login']);
 
   #Route::resource('peoples', People::class);
 
