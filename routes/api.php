@@ -42,7 +42,7 @@ Route::prefix('v1')->group(function () {
     Route::post('deleteAll', [PeoplesController::class, 'deleteAll']);
     Route::post('update', [PeoplesController::class, 'update']);
 
-    Route::get('sAllCurrency', function () {
+    Route::get('awesomeapiAll', function () {
       $res = Http::get('https://economia.awesomeapi.com.br/json/all');
       return $res->json();
     });

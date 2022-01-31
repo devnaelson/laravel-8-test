@@ -122,7 +122,7 @@
         // send request
         getCongig({
             method: 'GET',
-            url: "/sAllCurrency",
+            url: "/awesomeapiAll",
         }).then(function(response) {
 
             Object.keys(response.data).forEach(function(key, offset) {
