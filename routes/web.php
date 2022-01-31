@@ -22,12 +22,8 @@ Route::get('/currency', function () {
 });
 
 Route::get('/guzzle', function () {
-
-    $res = Http::get('https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL,BTC-BRL');
-
-    echo "<pre>";
-    dd($res->json());
-    echo "</pre>";
+    $res = Http::get('https://economia.awesomeapi.com.br/json/all');
+    return $res->json();
 });
 
 Route::get('/showProviders', function () {
