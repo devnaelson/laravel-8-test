@@ -1,5 +1,5 @@
 ### Sobre sitema
-
+- Sistema de conversão de moeda, feito em javascript 99% puro, real time.
 - PHP 8.0.14 (cli)
 - Laravel Framework 8.70.2
 - Autenticação com o usuário passaport autorized via midleware
