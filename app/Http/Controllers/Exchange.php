@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\HExchange;
+use Illuminate\Support\Arr;
 
 class Exchange extends Controller
 {
@@ -50,5 +52,19 @@ class Exchange extends Controller
             'rate_conversion' => $val_disUpDown, //Taxa de conversão: R$ 50,00
             'discont_onversion' => $valMhdDiscont, //Valor utilizado para conversão descontando as taxas: R$ 4.877,50
         ]);
+
+ /*        $insertHistory = array(
+            'cur_origim' => 's',
+            'cur_destiny' => '',
+            'val_input' => '',
+            'mhd_payment' => '',
+            'val_cur_destiny' => '',
+            'val_buy' => '',
+            'rate_payment' => '',
+            'rate_conversion' => '',
+            'discont_onversion' => ''
+        );
+
+        HExchange::create($insertHistory); */
     }
 }

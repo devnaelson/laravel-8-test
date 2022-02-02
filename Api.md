@@ -14,9 +14,9 @@ tablename:peoples, é preciso rodar o comandos artisan logo a baixo para carrega
 
 ```
 composer require laravel/passport
-php artisan migrate
+step 1 php artisan migrate
 
-"Personal access client not found. Please create one."
+step 2 "Personal access client not found. Please create one." se não, erro quando logar
 php artisan passport:install
 
 -- Esqueci para que serve o comando a baixo.
