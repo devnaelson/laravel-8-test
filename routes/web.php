@@ -3,6 +3,7 @@
 use App\Http\Controllers\API\PeoplesController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\AllExchange;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
@@ -19,6 +20,7 @@ use Illuminate\Http\Request;
 */
 
 Route::get('test', [TestController::class, 'index']);
+Route::get('how', [AllExchange::class, 'TODO']);
 
 Route::get('/exchange', function () {
     return view('trade');
