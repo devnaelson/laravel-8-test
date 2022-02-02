@@ -25,10 +25,10 @@ class LoginController extends BaseController
             $user = Auth::user();
             $success['token'] =  $user->createToken('authToken')->accessToken;
             $success['name'] =  $user->name;
-
-            return $this->sendResponse($success, 'User login successfully.');
+            
+            return $this->sendResponse($success, 'User login successfully.', ['error' => false]);
         } else {
-            return $this->sendResponse('Unauthorised.', ['error' => 'Unauthorised']);
+            return $this->sendResponse('Unauthorised.', ['error' => true]);
         }
 
     }
