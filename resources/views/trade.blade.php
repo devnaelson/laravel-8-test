@@ -92,14 +92,15 @@
                     <h4>Resultado da conversão</h4>
                     <div class="resStyle">
                         <ul id="showRes">
-                            <li class="liPropriets"> Conversão origim: <strong class="text-secondary" id="coverOrigem">-</strong></li>
-                            <li class="liPropriets"> Conversão destino: <strong class="text-secondary" id="coverDestiny">-</strong></li>
-                            <li class="liPropriets"> Conversão valor: <strong class="text-secondary" id="coverValor">-</strong></li>
-                            <li class="liPropriets"> Valor Moeda destino: <strong class="text-secondary" id="valCurrencyDestiny">-</strong></li>
-                            <li class="liPropriets"> Valor Comprado: <strong class="text-secondary" id="valBuyedDestiny">-</strong></li>
-                            <li class="liPropriets"> Taxa metodo pagamento: <strong class="text-secondary" id="ratePaymentMethod">-</strong></li>
+                            <li class="liPropriets"> Moeda de origem: BRL: <strong class="text-secondary" id="coverOrigem">-</strong></li>
+                            <li class="liPropriets"> Moeda de destino: USD: <strong class="text-secondary" id="coverDestiny">-</strong></li>
+                            <li class="liPropriets"> Valor para conversão: <strong class="text-secondary" id="coverValor">-</strong></li>
+                            <li class="liPropriets"> Forma de pagamento: <strong class="text-secondary" id="methodPayment">-</strong></li>
+                            <li class="liPropriets"> Valor da "Moeda de destino" usado para conversão: <strong class="text-secondary" id="valCurrencyDestiny">-</strong></li>
+                            <li class="liPropriets"> Valor comprado em "Moeda de destino": <strong class="text-secondary" id="valBuyedDestiny">-</strong></li>
+                            <li class="liPropriets"> Taxa de pagamento: <strong class="text-secondary" id="ratePaymentMethod">-</strong></li>
                             <li class="liPropriets"> Taxa Conversão maior menor: <strong class="text-secondary" id="rateConversion">-</strong></li>
-                            <li class="liPropriets"> Taxa Valor disconto metodo pagamento: <strong class="text-secondary" id="valDiscontOfTypePay">-</strong></li>
+                            <li class="liPropriets"> Valor utilizado para conversão descontando as taxas: <strong class="text-secondary" id="valDiscontOfTypePay">-</strong></li>
                         </ul>
                     </div>
                 </div>
@@ -239,11 +240,12 @@
                                 if (key == 'cur_origim') document.getElementById('coverOrigem').innerHTML = response.data[key];
                                 if (key == 'cur_destiny') document.getElementById('coverDestiny').innerHTML = response.data[key];
                                 if (key == 'val_input') document.getElementById('coverValor').innerHTML = response.data[key];
-                                if (key == 'mhd_payment') document.getElementById('valCurrencyDestiny').innerHTML = response.data[key];
-                                if (key == 'val_cur_destiny') document.getElementById('valBuyedDestiny').innerHTML = response.data[key];
-                                if (key == 'val_buy') document.getElementById('ratePaymentMethod').innerHTML = response.data[key];
-                                if (key == 'rate_payment') document.getElementById('rateConversion').innerHTML = response.data[key];
-                                if (key == 'rate_conversion') document.getElementById('valDiscontOfTypePay').innerHTML = response.data[key];
+                                if (key == 'mhd_payment') document.getElementById('methodPayment').innerHTML = response.data[key];
+                                if (key == 'val_cur_destiny') document.getElementById('valCurrencyDestiny').innerHTML = response.data[key];
+                                if (key == 'val_buy') document.getElementById('valBuyedDestiny').innerHTML = response.data[key];
+                                if (key == 'rate_payment') document.getElementById('ratePaymentMethod').innerHTML = response.data[key];
+                                if (key == 'rate_conversion') document.getElementById('rateConversion').innerHTML = response.data[key];
+                                if (key == 'discont_onversion') document.getElementById('valDiscontOfTypePay').innerHTML = response.data[key];
 
                             });
 

@@ -24,8 +24,6 @@ class Exchange extends Controller
 
         $val_disMd = $valueBought * $rateVal / 100;
 
-        $valMhdDiscont = $valueBought - $val_disMd;
-
         /*
         Aplicar taxa de 2% pela conversão para valores abaixo de R$ 3.000,00 e 1% para valores maiores que R$ 3.000,00, 
         essa taxa deve ser aplicada apenas no valor da compra e não sobre o valor já com a taxa de forma de pagamento.
@@ -37,8 +35,9 @@ class Exchange extends Controller
             $val_disUpDown = $valueBought * 2 / 100;
         }
 
+        $valMhdDiscont = ($valueBought - $val_disMd) - $val_disUpDown;
 
-        $unknow = $valueBought - $val_disUpDown;
+        $unknow = round($valueBought / $bid);
 
         return response()->json([
             'cur_origim' => 'BRL',
