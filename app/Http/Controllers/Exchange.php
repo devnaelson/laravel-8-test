@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\HExchange;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\DB;
 
 class Exchange extends Controller
 {
@@ -41,6 +42,25 @@ class Exchange extends Controller
 
         $unknow = round($valueBought / $bid);
 
+        if (DB::table('hexchange')->where('cur_destiny', $type)->exists()) {
+            DB::table('hexchange')
+                ->where('cur_destiny', $type)
+                ->update(['discont_onversion' => $type]);
+        } else {
+            $insertHistory = [
+                'cur_origim' => 'BRL',
+                'cur_destiny' => $type,
+                'val_input' => $valueBought,
+                'mhd_payment' => $mhdType,
+                'val_cur_destiny' => $bid,
+                'val_buy' => $unknow,
+                'rate_payment' => $val_disMd,
+                'rate_conversion' => $val_disUpDown,
+                'discont_onversion' => $valMhdDiscont
+            ];
+            DB::table('hexchange')->insert($insertHistory);
+        }
+
         return response()->json([
             'cur_origim' => 'BRL',
             'cur_destiny' => $type,
@@ -52,19 +72,5 @@ class Exchange extends Controller
             'rate_conversion' => $val_disUpDown, //Taxa de conversão: R$ 50,00
             'discont_onversion' => $valMhdDiscont, //Valor utilizado para conversão descontando as taxas: R$ 4.877,50
         ]);
-
- /*        $insertHistory = array(
-            'cur_origim' => 's',
-            'cur_destiny' => '',
-            'val_input' => '',
-            'mhd_payment' => '',
-            'val_cur_destiny' => '',
-            'val_buy' => '',
-            'rate_payment' => '',
-            'rate_conversion' => '',
-            'discont_onversion' => ''
-        );
-
-        HExchange::create($insertHistory); */
     }
 }
