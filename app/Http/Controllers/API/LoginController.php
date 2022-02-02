@@ -16,7 +16,7 @@ class LoginController extends BaseController
      */
     public function login(Request $request)
     {
-    
+
         if (Auth::attempt([
             'email' => $request->email,
             'password' => $request->password
@@ -26,10 +26,9 @@ class LoginController extends BaseController
             $success['token'] =  $user->createToken('authToken')->accessToken;
             $success['name'] =  $user->name;
 
-            return $this->sendResponse($success, 'User login successfully.');
+            return $this->sendResponse($success, 'User login successfully.', ['error' => false]);
         } else {
             return $this->sendResponse('Unauthorised.', ['error' => true]);
         }
-
     }
 }
