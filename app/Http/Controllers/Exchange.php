@@ -24,7 +24,6 @@ class Exchange extends Controller
 
         $rateVal = $input['md_payment']['val'];
         $mhdType = $input['md_payment']['type'];
-
         $val_disMd = $valueBought * $rateVal / 100;
 
         /*
@@ -39,7 +38,6 @@ class Exchange extends Controller
         }
 
         $valMhdDiscont = ($valueBought - $val_disMd) - $val_disUpDown;
-
         $unknow = round($valueBought / $bid);
 
         if (DB::table('hexchange')->where('cur_destiny', $type)->exists()) {
