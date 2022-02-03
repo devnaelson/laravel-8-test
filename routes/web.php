@@ -20,19 +20,20 @@ use Illuminate\Http\Request;
 */
 
 Route::get('test', [TestController::class, 'index']);
-Route::get('how', [AllExchange::class, 'TODO']);
 
+
+Route::get('list', [AllExchange::class, 'TODO']);
 Route::get('/exchange', function () {
     return view('trade');
+});
+
+Route::get('/showProviders', function () {
+    dd(app());
 });
 
 Route::get('/guzzle', function (Request $request) {
     $res = Http::get('https://economia.awesomeapi.com.br/json/all');
     return $res->json();
-});
-
-Route::get('/showProviders', function () {
-    dd(app());
 });
 
 Route::get('/register', function () {

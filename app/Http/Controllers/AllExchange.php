@@ -17,7 +17,7 @@ class AllExchange extends Controller
          ); 
         */
 
-        $hexchange = DB::select('SELECT * FROM hexchange');
-         return view('list')->with($hexchange);
+        $hexchange = DB::select('SELECT * FROM hexchange limit 10');
+        return view('list', compact('hexchange'));
     }
 }
