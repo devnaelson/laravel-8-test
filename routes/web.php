@@ -21,7 +21,6 @@ use Illuminate\Http\Request;
 
 Route::get('test', [TestController::class, 'index']);
 
-
 Route::get('list', [AllExchange::class, 'TODO']);
 Route::get('/exchange', function () {
     return view('trade');
