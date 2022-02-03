@@ -41,7 +41,17 @@ class Exchange extends Controller
         $unknow = round($valueBought / $bid);
 
         if (DB::table('hexchange')->where('cur_destiny', $type)->exists()) {
-            DB::table('hexchange')->where('cur_destiny', $type)->update(['discont_onversion' => $type]);
+            DB::table('hexchange')->where('cur_destiny', $type)->update([
+                    'cur_origim' => 'BRL',
+                    'cur_destiny' => $type,
+                    'val_input' => $valueBought,
+                    'mhd_payment' => $mhdType,
+                    'val_cur_destiny' => $bid,
+                    'val_buy' => $unknow,
+                    'rate_payment' => $val_disMd,
+                    'rate_conversion' => $val_disUpDown,
+                    'discont_onversion' => $valMhdDiscont
+                ]);
         } else {
             $insertHistory = [
                 'cur_origim' => 'BRL',
