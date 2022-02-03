@@ -89,7 +89,9 @@
             <div class="row">
                 <div class="col-2"></div>
                 <div class="col-4">
-                    <h4>Resultado da conversão</h4>
+                    <h4>Resultado da conversão
+                        <a class="btn btn-primary" href="{{ url('list')}}" role="button" target="_blank">lista corações</a>
+                    </h4>
                     <div class="resStyle">
                         <ul id="showRes">
                             <li class="liPropriets"> Moeda de origem: BRL: <strong class="text-secondary" id="coverOrigem">-</strong></li>
