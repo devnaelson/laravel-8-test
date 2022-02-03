@@ -86,8 +86,12 @@
                         c_password: intputPassword
                     }
                 }).then(function(response) {
-                    console.log(response);
-                    alert(response.data.message);
+
+                    alert(response.data.message.info);
+                    if (response.data.message.successful == true)
+                        window.location.href = "{{ url('')}}";
+
+
                 }).catch(err => console.log(err));
 
             } else {
