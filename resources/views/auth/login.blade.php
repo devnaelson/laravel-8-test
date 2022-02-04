@@ -84,7 +84,7 @@
 
                     var success = response.data.data.name;
                     var error = response.data.message.error;
-                    if (error == false) {
+                    if (error == true) {
                         alert("Usuário não existe cadastrado!");
                     } else {
                         window.location.href = "{{ url('exchange')}}";
