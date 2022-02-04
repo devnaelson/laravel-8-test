@@ -39,6 +39,10 @@ Route::get('/register', function () {
     return view('auth.register');
 });
 
+Route::get('/testEmail', function () {
+    return view('mail.test-mail');
+});
+
 Route::get('/', function () {
     return view('auth.login');
 });

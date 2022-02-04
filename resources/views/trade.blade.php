@@ -91,6 +91,7 @@
                 <div class="col-4">
                     <h4>Resultado da conversão
                         <a class="btn btn-primary" href="{{ url('list')}}" role="button" target="_blank">lista cotação</a>
+                        <a class="btn btn-primary" href="{{ url('testEmail')}}" role="button" target="_blank" id="testEmail">Enviar por email</a>
                     </h4>
                     <div class="resStyle">
                         <ul id="showRes">
@@ -112,6 +113,7 @@
     </div>
 
     <script type="module">
+
         $(function() {
             $('#target_value').maskMoney();
         })

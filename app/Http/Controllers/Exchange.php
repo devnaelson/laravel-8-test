@@ -38,7 +38,7 @@ class Exchange extends Controller
         }
 
         $valMhdDiscont = ($valueBought - $val_disMd) - $val_disUpDown;
-        $unknow = $valMhdDiscont / $bid;
+        $unknow = round($valMhdDiscont / $bid);
 
         if (DB::table('hexchange')->where('cur_destiny', $type)->exists()) {
             DB::table('hexchange')->where('cur_destiny', $type)->update([
