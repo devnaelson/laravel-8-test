@@ -84,10 +84,12 @@
 
                     var success = response.data.data.name;
                     var error = response.data.message.error;
-                    if(error)
+                    if (error == false) {
                         alert("Usuário não existe cadastrado!");
+                    } else {
                         window.location.href = "{{ url('exchange')}}";
-                    localStorage.setItem('token_gio', response.data.data.token);
+                        localStorage.setItem('token_gio', response.data.data.token);
+                    }
 
                 }).catch(err => console.log(err));
 
