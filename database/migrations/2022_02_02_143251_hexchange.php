@@ -15,6 +15,7 @@ class Hexchange extends Migration
     {
         Schema::create('hexchange', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
             $table->text('cur_origim');
             $table->text('cur_destiny');
             $table->text('val_input');
